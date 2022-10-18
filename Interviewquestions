@@ -1,0 +1,360 @@
+1.What is booting process of Linux? 
+2.DISK management
+3.Process management
+4.what is virtual memory. What are the problems with virtual mem
+5.what is swap memory
+6.which operating system do u like... Windows or os? 
+7.programming - reversal of a string
+8.are there any sub processes 
+9.what is the childprocesses
+10.what is dns? 
+11.explain about defragmentation? 
+
+====
+
+Booting process of windows and linux 
+where mbr stores?
+How to kill process?
+Virtual memory
+What will happen to child processes if you kill the parent process?
+Multithreading
+Search for one word in the string and without that word print the string
+Any Sorting algorithm 
+Array programs 
+linked list programs
+time complexity of programs
+
+====
+
+memory mamagement
+can we run 2gb process in 1gb computer
+process kill command
+virtual memory
+orphan processes, zombie process
+Booting process
+Multitreathing, multiprocessing, multitasking
+What is os
+function of os
+What are the problem having low ram
+diffrence between ram and rom
+running more processes is good or bad
+What is paging and demand paging
+what are techincal issues in any projects
+What is pointer
+what is array
+is pointer exists in python
+linked list
+types of linked list, disadvantage and advantages
+
+=====
+
+• Project related questions
+• System slow down
+• Process management
+• Process states
+• File permissions
+• User management
+• Sum of two linked lists
+• Deleting a repeated character from a string
+• Linux boot process
+• Real time highly analysed topic or situation
+• Thrashing
+• Page faults
+• Paging
+• Segmentation
+
+====
+
+how can we reduce server latency in base of networking
+about Iana
+Dns
+dhcp
+Osi
+layer 2,3,4 brief
+ explaination
+About mac table, arp
+Tcp functions
+Ssl and 3 way handshake
+Assigning address without dhcp
+private and public ips, NAT
+diff b/w http and https
+
+====
+
+• Projects
+• Acl
+• Filesystem
+• Dns resolution
+• Firewall
+• Ipv4
+•  Ipv6
+• Arp process
+• Tcp handshaking
+• Dhcp
+• Osi model
+• Transport layer
+• Troubleshooting-Server based qns
+• Unicast broadcast multicast
+• Commands for configuring ipv4 and ipv6 
+• RIP 
+
+==========
+
+• Projects (In detail 20 min )
+• Dns resolution ( Scenario based)
+• Firewall  (scenario based
+• DORA process in detail
+• Dhcp
+• port numbers Nd wat r the ports used for..
+   Subnetting
+Osi layers 
+TCP layers 
+And some troubleshooting questions- server based
+
+====
+
+os:boot process of linux.
+virtual memory.
+swap memory.
+what happens to system when we are using multiple applications at once.
+checking resource utilization in windows and linux.
+virtualization.
+using virtual machine vs real machine.
+what are the specifications of our laptop why you taken laptop with those specifications.
+lamp stack web server(project)
+troubleshooting the issue with website.
+Icmp protocols.
+checking ip address in windows and linux. 
+write a program of your choice but not simple regular program.
+
+===
+
+os:boot process of linux.
+virtual memory.
+swap memory.
+Run levels.
+Init states
+
+what happens to system when we are using multiple applications at once.
+checking resource utilization in windows and linux.
+virtualization.
+Deadlock
+PCB
+Swapping
+Demand paging
+Scenario of Linux..about boot speed
+MMU
+using virtual machine vs real machine.
+what are the specifications of our laptop why you taken laptop with those specification.
+Icmp protocols.
+checking ip address in windows and linux.
+
+====
+
+Networking:
+osi model
+flow control
+ssl handshake
+dns 
+what happens when you trigger amazon.com
+icmp protocols and their differences
+how transport layer makes the segments.
+Difference Between Symmetric and Asymmetric Encryption.
+explain any encryption algorthim if you know.
+Explain internal mechanism how traceroute know the hops in network.
+How switch learns the mac address of devices.
+collision vs broadcast domain.
+
+====
+
+Networking:
+TCP
+UDP
+Ipv4
+Ipv6
+Subnet mask
+Classes a b c d e
+Cidr
+Mss
+MTU
+NAT
+IANA
+Projects
+Proud moment
+Scenario where I used my innovative knowledge
+Achievements
+osi model
+flow control
+ssl handshake
+dns
+icmp protocols and their differences
+how transport layer makes the segments.
+
+===
+
+1.osi model
+2.switch,router and hub
+3.Broadcast domain
+4.given a topology and asked the number of collision domains and broadcast domains
+5.each layer protocols and their explainations
+6.what is the backend process, when we browse amazon.com in browser
+7.dns port number
+8. U are trying to browse something in ur browser, but u are unable to reach the server... How can you troubleshoot this problem.
+9.tcp and udp
+
+===
+
+Services used in cloud 
+Ec2 explanation 
+Devops 
+Tools in devops 
+Project 
+Security groups 
+Commands used to install services and packages 
+AWS - networking trouble shooting 
+AWS - os trobule shooting 
+S3 
+DNS ( just  need of it ) which concept you need either n/w or os
+If os ( choose the os you need ) 
+SSH
+
+===
+
+Bios booting process(indepth) 
+Where mbr placed
+Any linux commands
+Multi tasking, multi programming, multi Processing
+Difference between multi programming and multi tasking
+Booting trouble shooting
+Linux System is running slow why? 
+anagram string in Python?
+
+===
+
+what is os
+what is process
+tcp/ip
+tcp 3 way handshake
+dhcp
+file permissions
+program on python
+
+===
+
+What is kernel 
+Difference between kernel and OS
+About virtual memory
+Paging
+Linux booting process 
+Windows booting process 
+Python related programs
+How physical memory and virtual memory is related
+Explain the project
+Questions about project
+
+===
+
+1. Deadlock and it's avoidance
+2. Booting process - linux .grub full form.
+3. Project
+4. Dual boot in a system and flow of process
+5. About MBR 
+6. Bsod (blue screen of death) how to handle that 
+7. SSH working and it's port number
+8. Primary memory , secondary memory. Rom and ram and secondary memory.
+9. Context switching and where does the process will  get stored while context switching
+10. Swap memory or Virtual memory
+11. Thrashing
+12. Paging and it's types
+13. Demand paging
+14. Process management and process states
+15. Which processor performs better dual core processor with 3.8ghz and quad core processor with 1.8 GHz 
+16. What are run levels in Linux. 
+17. Orphan process and Zombie process. how orphan process are handled. which run level handles orphan process .
+18. Programming - identify duplicates in a string, how to remove it and it's time complexity how can you reduce it and what are the other approaches you can solve that program
+19. Commands in Linux
+20. Critical parts of a program.
+21. What happens when 8 GB program is present and 4 GB ram is present in the system. And what happens when 16gb ram is present and 8gb program needs to be loaded.
+
+===
+
+Boot process(windows and Linux)
+Trouble shooting qs
+Virtual memory
+Trigger Amazon.com
+Paging 
+DHCP
+Dora 
+DNS
+Program (pattern)
+
+===
+
+1. What are the steps should be taken when website is hosted and for it to be highly available and highly secured.
+2. What happens in the background when amazon.com is typed in the browser
+3. DNS and it's types
+4. SSL/TLS
+5. Contents in TCP header or IP header
+6. TCP threeway handshake
+7. Project
+8. What are the contents in syn flag in TCP handshake.
+
+===
+
+1.Can we run 8gb process in 2gb ram system
+2.Trashing
+3.Booting process trouble shooting
+4.Virtual memory
+5.Process management and process states 
+6.What are run levels in Linux.
+7.Orphan process and Zombie process
+8.Context Switching
+9.Which processor performs better dual core processor with 3.6ghz or quad core processor with 1.8 GHz
+10.Command to find space of main memory
+11.Swapping
+12.About MBR and its size
+13.GRUB functionality
+14.Linux Commands
+15.Program for removing duplicates in array and its time complexity 
+16.Reasons for system slow down
+17.What is disk
+
+===
+
+1.OSI model and scenarios based on it
+2.TCP/UDP and TCP three way hand shake 
+3.DORA process and a scenario based on it
+4.DHCP port numbers
+5.Project based questions
+6.SSH and RDP
+7.Network Trouble shooting
+8.DNS
+9.What happens in the background when amazon.com is typed in the browser
+10.MTU and MSS
+11.Scenario on data link layer
+12.NAT
+
+====
+
+1.What is booting process in both windows and linux?
+2.what is mbr?
+3.Contents of mbr?size of mbr?
+4.project
+5.swapping...
+6.memory management
+7.swap in and swap out
+8.oops
+9.inheritance
+10.polymorphism
+11.programs for swapping of two numbers (not using temp,not predefined functions)
+11.what are things which make a device performance good?
+12.what are the differences between intel i3,i5,i7,i9? Why i3 is have low performance?
+
+===
+
+
+
+
+
+
+
