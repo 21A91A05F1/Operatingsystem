@@ -1,0 +1,48 @@
+Operating System:
+      The operating system is an interface between the user and the machine. 
+      It also allows us to communicate with the computer without knowing how to speak the computer’s language.
+      It manages computer hardware, software resources, and provides common services for computer programs.
+      It manages the computer’s memory, processes, devices, files, and security aspects of the system.i.e. resource manager.
+Types of Os:
+      Batch OS:
+            DE:
+            Imagine you are the owner of a photography studio,
+            and you have a Batch Operating System in place to process and print photos. 
+
+
+            This type of operating system does not interact with the computer directly.
+            Os --------> cpu.
+            There is an operator which takes similar jobs having the same requirement and groups them into batches.
+            Os----> batch---> cpu
+            It is the responsibility of the operator to sort jobs with similar needs. 
+            Jobs---->Os----->batch----->cpu
+
+            Advantages:
+                  It is very difficult to guess or know the time required for any job to complete, but processors of the batch systems know how long the job would be when it is in the queue.  
+                  It is easy to manage large work repeatedly in batch systems.
+            Dis:
+                  Batch systems are hard to debug.
+                  It is sometimes costly.
+
+    Distributed OS:
+            DE:
+            Imagine you are part of a team working on a project, 
+            and your team members are spread across different locations.To enhance collaboration,
+            you decide to use a distributed operating system that allows 
+            seamless sharing of computing resources and I/O files.
+
+            It connects multiple computers via a single communication channel.
+            (daily life example: people in villagers meet at a large tree).
+            Individual systems that communicate via a single channel are regarded as a single entity and They're also known as loosely coupled systems.
+
+      
+
+
+
+
+
+      
+      Multitasking OS
+      Network OS
+      Real-Time OS
+      Mobile OS
