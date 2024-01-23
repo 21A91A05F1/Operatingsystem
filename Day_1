@@ -34,15 +34,58 @@ Types of Os:
             It connects multiple computers via a single communication channel.
             (daily life example: people in villagers meet at a large tree).
             Individual systems that communicate via a single channel are regarded as a single entity and They're also known as loosely coupled systems.
-
       
+      Multitasking OS:
+            Multitasking Operating System is simply a multiprogramming Operating System with having facility of a Round-Robin Scheduling Algorithm.
+            It can run multiple programs simultaneously.
+            It comes with proper memory management.
 
+            Dis adv:
+            The system gets heated in case of heavy programs multiple times.
 
+            Example:
+            Search engine.
+      Network OS:
+            These systems run on a server and provide the capability to manage data,
+                  users, groups, security, applications, and other networking functions. 
+            
+            A Network Operating System (NOS) is designed to manage and coordinate network resources, 
+                  allowing multiple computers to communicate and share resources within a network.
+            
+            Example:
+            File and Print Services:
+            
+            Users on different computers can share files seamlessly through NetOS.
+            Print services allow users to send print jobs to network printers, eliminating the need for direct connections.
 
+            Adv:
+            Highly stable centralized servers.
+            Security concerns are handled through servers.
 
+            Disadv:
+            Servers are costly.
+            User has to depend on a central location for most operations
 
-      
-      Multitasking OS
-      Network OS
-      Real-Time OS
-      Mobile OS
+      Real-Time OS:
+            The time interval required to process and respond to inputs is very small. 
+            This time interval is called response time. 
+            Real-time systems are used when there are time requirements that are very strict like missile systems,
+            air traffic control systems, robots, etc. 
+
+            Types:
+            Hard -> time constraints very strict -> automatic parachute air bag.
+            Soft -> streaming services for netflix and prime interms of buffering.
+
+            Adv:
+            More output from all the resources.
+
+            Disadv:
+            The algorithms are very complex and difficult for the designer to write on.
+            Example:
+            weapon systems, robots, air traffic control systems.
+
+      Mobile OS:
+            Mobile operating systems are specialized operating systems designed
+            to run on mobile devices such as smartphones and tablets. 
+            They provide a platform for running applications, 
+            managing hardware resources, and facilitating communication between various components.
