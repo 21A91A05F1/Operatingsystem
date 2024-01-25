@@ -1,1 +1,44 @@
-.
+Socket:
+      A socket is one endpoint of a two-way communication link between two programs running on the network. 
+      A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to.
+  Detail Note:
+        Normally, a server runs on a specific computer and has a socket that is bound to a specific port number. 
+        The server just waits, listening to the socket for a client to make a connection request.
+
+      On the client-side:
+        The client knows the hostname of the machine on which the server is running and the port number on which the server is listening. 
+        To make a connection request, the client tries to rendezvous with the server on the server's machine and port. The client also needs to identify itself to the server so it binds to a local port number that it will use during this connection. This is usually assigned by the system.
+
+      On the server-side:
+          If everything goes well, the server accepts the connection.
+          Upon acceptance, the server gets a new socket bound to the same local port and also has its remote endpoint set to the address and port of the client.
+          It needs a new socket so that it can continue to listen to the original socket for connection requests while tending to the needs of the connected client.
+
+      result:
+            On the client side, if the connection is accepted, a socket is successfully 
+            created and the client can use the socket to communicate with the server.
+
+
+Monolithic Kernel (provides good performance but lots of lines of code):
+      It is one of the types of kernel where all operating system services operate in kernel space. It has dependencies between system components. It has huge lines of code which is complex.
+      Example : Unix, Linux, Open VMS, XTS-400 etc.
+===================================================================================
+Difference between process and program and thread? Different types of process. 
+
+Process:
+      Process is an instance of an executing program. For example, we write our computer programs in a text file and when we execute this program, it becomes a process which performs all the tasks mentioned in the program.
+
+Program:
+      Program is a set of instructions to perform a certain task. Eg: chrome.exe, notepad.exe
+
+Thread:
+      Thread is a path of execution within a process.
+      A thread is also known as a lightweight process. 
+      The idea is to achieve parallelism by dividing a process into multiple threads.
+      For example,Word processor uses multiple threads: one thread to format the text, another thread to process inputs.
+================================================================================
+
+
+      
+
+
