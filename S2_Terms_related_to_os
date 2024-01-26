@@ -37,6 +37,58 @@ Thread:
       The idea is to achieve parallelism by dividing a process into multiple threads.
       For example,Word processor uses multiple threads: one thread to format the text, another thread to process inputs.
 ================================================================================
+Virtual Memory:
+
+A computer can address more memory than the amount physically installed on the system.
+The main visible advantage of this scheme is that programs can be larger than physical memory. Virtual memory serves two purposes. First, it allows us to extend the use of physical memory by using a disk. Second, it allows us to have memory protection, 
+because each virtual address is translated to a physical address.
+=================================================================================
+Thrashing:
+
+Thrashing is a condition or a situation when the system is spending a major portion of its time in servicing the page faults, 
+but the actual processing done is very negligible. 
+Relatable content:
+The primary cause of thrashing is when the system is overwhelmed with too many processes or tasks
+that require more memory than is physically available. 
+As a result, the operating system constantly swaps data in and out of the main memory to the storage device,
+leading to a significant decrease in system performance.
+========================================================================
+RAID:
+Redundant Array of Independent Disks. 
+RAID is a technology that combines multiple hard drives into a single logical unit 
+to improve data storage performance, reliability, or a combination of both.
+The idea behind RAID is to use several disks together in ways that provide benefits such as 
+increased data protection, better performance, or a balance between the two.
+
+There are different RAID levels, each offering different advantages. Here are some common RAID levels explained briefly:
+
+RAID 0 (Striping): Data is split across multiple drives, improving performance because multiple disks can be read or written to simultaneously. However, there is no redundancy, so if one drive fails, all data is lost.
+
+RAID 1 (Mirroring): Data is duplicated on two or more drives. This provides redundancy, meaning if one drive fails, the data is still available on the mirrored drive(s). However, it doesn't offer a performance improvement.
+
+RAID 5 (Striping with Parity): Similar to RAID 0 in terms of performance, but it includes parity information, which allows for data recovery in case one drive fails. RAID 5 requires a minimum of three drives.
+
+RAID 10 (Combination of RAID 1 and RAID 0): It combines mirroring (RAID 1) and striping (RAID 0). Data is both mirrored and striped for both performance and redundancy. RAID 10 requires a minimum of four drives.
+
+RAID 6 (Striping with Dual Parity): Similar to RAID 5, but with two sets of parity information. This allows for the system to recover from the failure of up to two drives. RAID 6 requires a minimum of four drives
+==========================================
+Deadlock:
+      A Deadlock is a situation where each of the computer processes waits for a resource 
+      which is being assigned to some other process. In this situation, none of the processes gets
+      executed since the resource it needs is held by some other process which is also waiting for
+      some other resource to be released.
+
+Key characteristics of deadlocks include:
+
+Mutual Exclusion: Processes contend for exclusive control over resources, meaning that once a process holds a resource, others are excluded from using it.
+
+Hold and Wait: Processes hold resources while waiting for others, creating a situation where resources are not released until new resources are obtained.
+
+No Preemption: Resources cannot be forcibly taken away from a process; they must be released voluntarily.
+
+Circular Wait: There is a circular chain of processes, each waiting for a resource held by the next process in the chain.
+      
+
 
 
       
