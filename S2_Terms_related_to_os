@@ -80,13 +80,18 @@ Deadlock:
 
 Key characteristics of deadlocks include:
 
-Mutual Exclusion: Processes contend for exclusive control over resources, meaning that once a process holds a resource, others are excluded from using it.
+Mutual Exclusion: 
+      Processes contend for exclusive control over resources, meaning that once a process holds a resource, others are excluded from using it.
 
-Hold and Wait: Processes hold resources while waiting for others, creating a situation where resources are not released until new resources are obtained.
+Hold and Wait: 
+      Processes hold resources while waiting for others, creating a situation where resources are not released until new resources are obtained.
 
-No Preemption: Resources cannot be forcibly taken away from a process; they must be released voluntarily.
+No Preemption: 
+      Resources cannot be forcibly taken away from a process; they must be released voluntarily.
 
-Circular Wait: There is a circular chain of processes, each waiting for a resource held by the next process in the chain.
+Circular Wait: 
+      There is a circular chain of processes, each waiting for a resource held by the next process in the chain.
+
       
 
 
