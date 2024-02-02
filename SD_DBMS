@@ -45,3 +45,41 @@ What is database??
       They collect information on people, places or things. 
       That information is gathered in one place so that it can be observed and analyzed. 
       Databases can be thought of as an organized collection of information.
+=======================================================================================
+What is a database system? 
+      A database system is a software-based solution that facilitates the organization, storage, retrieval, and management of data.
+      A database system is a digital tool that helps you keep your information in order, making it accessible and manageable whenever you need it.
+======================================================================
+What is RDBMS ? Properties.. 
+      
+    A Relational Database Management system (RDBMS) is a database management system that is based on the relational model. 
+    It has the following major components: Table, Record/Tuple/Row, Field, and Column/Attribute. 
+    Examples of the most popular RDBMS are MYSQL, Oracle, IBM DB2, and Microsoft SQL Server database.
+=============================================================================
+Proprties:
+    Relational databases have the following properties:
+    
+    Values are atomic.
+    All of the values in a column have the same data type.
+    Each row is unique.
+    The sequence of columns is insignificant.
+        It means that the order in which you define or retrieve columns in a table doesn't affect how the database stores or retrieves the data
+    The sequence of rows is insignificant.
+        The order in which rows are stored in a table or retrieved from a table does not affect the logical structure of the data
+    Each column has a unique name.
+    Integrity constraints maintain data consistency across multiple tables.
+        Primary Key Constraint:
+    
+                Ensures that each row in a table has a unique identifier, preventing duplicate entries. This is often used for linking tables together.
+        Foreign Key Constraint:
+                
+                Defines a relationship between two tables, ensuring that values in one table's column match the values in another table's column. This maintains referential integrity.
+        Unique Constraint:
+                
+                Ensures that values in a particular column (or a combination of columns) are unique across the entire table, preventing duplicates.
+        Check Constraint:
+                
+                Specifies a condition that each row must satisfy. For instance, a check constraint can ensure that ages in a table are always positive.
+=====================================================================================
+Types of database languages :
+    
