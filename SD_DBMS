@@ -82,4 +82,124 @@ Proprties:
                 Specifies a condition that each row must satisfy. For instance, a check constraint can ensure that ages in a table are always positive.
 =====================================================================================
 Types of database languages :
-    
+Data Definition Language: (CAD)
+        DDL stands for Data Definition Language.
+        It is used to define database structure or pattern.
+        DDL in SQL includes commands like CREATE, ALTER, and DROP,
+
+        which are used to define and modify the structure of a database.
+Data Manipulation Language: (SIAD)
+        DML stands for Data Manipulation Language. 
+        It is used for accessing and manipulating data in a database. It handles user requests.
+        DML includes commands like SELECT, INSERT, UPDATE, and DELETE, which are used to retrieve, insert, modify, and delete data in a database.
+Data Control Language:(GR)
+        DCL stands for Data Control Language. 
+        It is used to retrieve the stored or saved data.
+        DCL includes commands like GRANT and REVOKE, 
+        which are used to control access to data within a database.
+Transaction Control Language:(CRS)
+        TCL is used to run the changes made by the DML statement.
+        TCL can be grouped into a logical transaction.
+        TCL includes commands like COMMIT, ROLLBACK, and SAVEPOINT,
+        which are used to manage transactions in a database.
+=======================================================
+Commands:
+CREATE TABLE
+The CREATE TABLE command creates a new table in the database.
+Syntax:
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+ALTER TABLE
+The ALTER TABLE command adds, deletes, or modifies columns in a table.
+The ALTER TABLE command also adds and deletes various constraints in a table.
+Syntax:
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+DROP TABLE
+The DROP TABLE command deletes a table in the database.
+Syntax:
+DROP TABLE Shippers;
+
+TRUNCATE TABLE
+The TRUNCATE TABLE command deletes the data inside a table, but not the table itself.
+Syntax:
+TRUNCATE TABLE Categories;
+
+==
+SELECT DML Command:
+The SELECT command shows the records of the specified table.
+It also shows the particular record of a particular column by using the WHERE clause.
+
+Syntax of SELECT DML command
+SELECT column_Name_1, column_Name_2, ….., column_Name_N FROM Name_of_table;
+
+INSERT DML Command:
+It allows users to insert data in database tables.
+Syntax:
+INSERT INTO TABLE_NAME ( column_Name1 , column_Name2 , column_Name3 , .... column_NameN )
+
+UPDATE DML Command:
+It allows users to update or modify the existing data in database tables.
+
+Syntax of UPDATE Command
+UPDATE Table_name SET [column_name1= value_1, ….., column_nameN = value_N] WHERE CONDITION;  
+Here, 'UPDATE', 'SET', and 'WHERE' are the SQL keywords, and 'Table_name' is the name of the table whose values you want to update.
+
+DELETE DML Command:
+
+DELETE is a DML command which allows SQL users to remove single or multiple existing records from the database tables.
+This command of Data Manipulation Language does not delete the stored data permanently from the database.
+We use the WHERE clause with the DELETE command to select specific rows from the table.
+
+Syntax of DELETE Command
+
+DELETE FROM Table_Name WHERE condition; 
+=================================
+The SQL Grant command:
+It is used especially to grant users access to database objects.
+Users can also provide permissions to other users using this command.
+
+Syntax:
+GRANT privilege_name ON object_name
+to {user_name | public | role_name}
+Explaination:
+Here, the public is used to allow access to all users, object_name is the name of the database object, 
+user_name is the user to whom access should be granted, and privilege_name is the permission that needs to be granted.
+
+What is revoke????
+The REVOKE command is used to revoke previously granted privileges from a user or a group of users.
+It allows the database administrator to remove specific privileges,
+thereby restricting access to certain database objects.
+Syntax:
+REVOKE privilege_name ON object_name
+from {user_name | public | role_name}
+
+Grant ---privilege--> database object
+Revoke <-----Revokes privilege --- data base object
+
+==========
+The COMMIT Command
+The COMMIT command is the transactional command used to save changes invoked by a transaction. 
+It saves all the transactions occurred on the database since the last COMMIT or ROLLBACK.
+
+The ROLLBACK Command
+The ROLLBACK command is the transactional command used to undo transactions that have not already been saved to the database.
+This command can only undo transactions since the last COMMIT or ROLLBACK.
+
+The SAVEPOINT Command
+A SAVEPOINT is a logical rollback point in a transaction.
+Usually, when you execute the ROLLBACK command, it undoes the changes until the last COMMIT. 
+But, if you create save points you can partially roll the transaction back to these points.
+You can create multiple save points between two commits.
+
+The syntax to create a SAVEPOINT among the transactions is as shown below.
+
+SAVEPOINT savepoint_name;
+=====================================================================================
