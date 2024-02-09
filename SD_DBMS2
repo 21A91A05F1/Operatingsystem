@@ -1,0 +1,44 @@
+Difference between vertical and horizontal scaling :
+
+Scaling:
+=======
+Scaling alters the size of a system. In the scaling process,
+we either compress or expand the system to meet the expected needs.
+The scaling operation can be achieved by adding resources to meet the smaller expectation in the current system, 
+or by adding a new system in the existing one, or both.
+
+Vertical scaling and horizontal scaling are two approaches to increasing the capacity 
+or performance of a system, and they involve different strategies for handling increased demand or load.
+
+Vertical Scaling (Scaling Up):
+============================
+Definition: Vertical scaling involves adding more resources (such as CPU, RAM, or storage) to a single machine or node in a system.
+==========
+Vertical scaling keeps your existing infrastructure but adds computing power. 
+Your existing pool of code does not need to change — you simply need to run the same code on machines
+with better specs. By scaling up, you increase the capacity of a single machine and increase
+its throughput. Vertical scaling allows data to live on a single node, and scaling spreads
+the load through CPU and RAM resources for your machines.
+
+Example: Upgrading a server by adding more CPU cores, increasing RAM, or using a more powerful processor.
+========
+Horizontal Scaling (Scaling Out):
+================================
+Definition: Horizontal scaling involves adding more machines or nodes to a distributed system.
+==========
+Horizontal scaling simply adds more instances of machines without first implementing 
+improvements to existing specifications. By scaling out, you share the processing power
+and load balancing across multiple machines.
+
+Example: Adding more servers to a web application to distribute the incoming traffic and share the load.
+=======
+
+Choosing between Vertical and Horizontal Scaling:
+========  ======= ======== === =================
+Use Case: The choice often depends on the specific use case, workload, and the architecture of the application.
+Limits of Vertical Scaling: If a system reaches the limits of vertical scaling (e.g., due to hardware constraints),
+horizontal scaling becomes a natural choice.
+Cloud Environments: Horizontal scaling is commonly used in cloud environments where adding or removing virtual machines is more flexible.
+
+In many modern systems, a combination of both vertical and horizontal scaling is employed to achieve the desired performance,
+scalability, and fault tolerance. This approach is often referred to as "scaling up" and "scaling out" simultaneously.
