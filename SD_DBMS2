@@ -42,3 +42,35 @@ Cloud Environments: Horizontal scaling is commonly used in cloud environments wh
 
 In many modern systems, a combination of both vertical and horizontal scaling is employed to achieve the desired performance,
 scalability, and fault tolerance. This approach is often referred to as "scaling up" and "scaling out" simultaneously.
+
+Daily life example for vertical scaling and horizontal scaling:
+================================================================
+Vertical:
+Imagine you have a small car that you use for commuting.
+As your family grows, you find that the car is becoming too small.
+Instead of buying a second car (horizontal scaling), you decide to upgrade to a larger,
+more powerful car. This vertical scaling allows your single vehicle to accommodate
+the increased capacity and meet the growing needs of your family.
+
+Horizontal:
+
+Consider organizing a dinner party for a large group of friends.
+Instead of cooking all the dishes yourself (vertical scaling),
+you decide to adopt a horizontal scaling approach.
+You invite your friends and ask each of them to bring a dish to share.
+This way, the workload is distributed horizontally across multiple contributors,
+making the overall dinner preparation more efficient and allowing for a greater variety of dishes.
+
+
+=====================================
+What is sharding ??? (To divide and distribute tasks or responsibilities to make them more manageable.)
+=====================================
+Sharding is a method of splitting and storing a single logical dataset in multiple databases.
+By distributing the data among multiple machines, a cluster of database systems can store larger dataset and handle additional requests. 
+Sharding is necessary if a dataset is too large to be stored in a single database. 
+Sharding allows a database cluster to scale along with its data and traffic growth.
+
+
+
+Keys in DBMS :
+=============
