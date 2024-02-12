@@ -74,3 +74,43 @@ Sharding allows a database cluster to scale along with its data and traffic grow
 
 Keys in DBMS :
 =============
+A key is a field or a combination of fields that uniquely identifies a record in a table.
+
+Super Key:
+==========
+  A super key is a set of one or more keys that can uniquely identify a record.
+  It may contain more fields than necessary to form a minimal super key.
+
+  Example: In a "Employees" table, a combination of "Employee_ID" and "Email" can form a super key.
+  Daily Life Scenario:
+  In a contact list, a combination of a person's phone number and email address can be considered a super key as it uniquely identifies each contact
+
+Candidate Key:
+==============
+A candidate key is a unique key that can become a primary key.
+It satisfies the uniqueness and irreducibility criteria.
+
+Example: In a "Product" table, both "Product_ID" and "Barcode" might be candidate keys.
+Daily Life Scenario:
+Consider a store where products can be identified uniquely either by their product ID
+or barcode. Both the product ID and barcode are candidate keys.
+
+Primary Key:
+============
+A primary key is a unique identifier for a record in a table.
+It cannot have NULL values.
+Each table can have only one primary key.
+
+Example: In a "Students" table, the "Student_ID" can be a primary key.
+Daily Life Scenario:
+Think of a library where each book has a unique ISBN (International Standard Book Number). The ISBN can be considered as a primary key for the books in the library.
+
+Alternate Key:
+=============
+An alternate key is the secondary candidate key that contains all the property of a candidate key but is an alternate option.
+It is capable of identifying a row uniquely.
+However, such a key is not used as a primary key because,
+as we have discussed in our previous section that out of all the generated 
+candidate keys, only one key is selected as the primary key. 
+Thus, the other remaining keys are known as Alternate Keys or Secondary Keys.
+
