@@ -1,0 +1,12 @@
+Types of relationship :
+    Unary Relationship Set – Unary relationship set is a relationship set where only one entity set participates in a relationship set.
+    Binary Relationship Set – Binary relationship set is a relationship set where two entity sets participate in a relationship set.
+    Ternary Relationship Set – Ternary relationship set is a relationship set where three entity sets participate in a relationship set.
+    N-ary Relationship Set – N-ary relationship set is a relationship set where ‘n’ entity sets participate in a relationship set.
+
+Data abstraction in DBMS:
+    Data Abstraction is a process of hiding unwanted or irrelevant details from the end user.
+    It provides a different view and helps in achieving data independence which is used to enhance the security of data.
+
+DDL:
+    It used to define and manage the structure of a database. DDL statements are responsible for creating, altering, and deleting database objects such as tables, indexes, and views.
