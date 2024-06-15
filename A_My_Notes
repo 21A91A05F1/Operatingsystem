@@ -117,11 +117,13 @@ Monolithic Kernel (provides good performance but lots of lines of code):
 ===================================================================================
 Difference between process and program and thread? Different types of process. 
 
-Process:
-      Process is an instance of an executing program. For example, we write our computer programs in a text file and when we execute this program, it becomes a process which performs all the tasks mentioned in the program.
-
 Program:
       Program is a set of instructions to perform a certain task. Eg: chrome.exe, notepad.exe
+
+Process:
+      Process is an instance of an executing program.
+      For example, we write our computer programs in a text file and when we execute this program,
+      it becomes a process which performs all the tasks mentioned in the program.
 
 Thread:
       Thread is a path of execution within a process.
