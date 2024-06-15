@@ -129,23 +129,43 @@ Thread:
       Thread is a path of execution within a process.
       A thread is also known as a lightweight process. 
       The idea is to achieve parallelism by dividing a process into multiple threads.
-      For example,Word processor uses multiple threads: one thread to format the text, another thread to process inputs.
+      For example,Word processor uses multiple threads: one thread to format the text,
+      another thread to process inputs.
 ================================================================================
 Virtual Memory:
 
 A computer can address more memory than the amount physically installed on the system.
-The main visible advantage of this scheme is that programs can be larger than physical memory. Virtual memory serves two purposes. First, it allows us to extend the use of physical memory by using a disk. Second, it allows us to have memory protection, 
+The main visible advantage of this scheme is that programs can be larger than physical memory.
+Virtual memory serves two purposes. First, it allows us to extend the use of physical memory
+by using a disk. Second, it allows us to have memory protection, 
 because each virtual address is translated to a physical address.
 =================================================================================
+Page fault:
+      A page fault occurs when a program tries to access a portion of memory that is not currently in the computer's RAM, 
+      prompting the operating system to retrieve the data from disk storage into RAM.
+      Example:
+       Imagine your computer's RAM is like a desk where you do your work,
+      and the hard drive is like a bookshelf with extra storage. When you need a book (data)
+      that's not on your desk,you get up and fetch it from the bookshelf.
+==============================================================================
 Thrashing:
 
-Thrashing is a condition or a situation when the system is spending a major portion of its time in servicing the page faults, 
-but the actual processing done is very negligible. 
+Thrashing is a condition or a situation when the system is spending a major portion of its time
+in servicing the page faults, but the actual processing done is very negligible. 
 Relatable content:
 The primary cause of thrashing is when the system is overwhelmed with too many processes or tasks
 that require more memory than is physically available. 
-As a result, the operating system constantly swaps data in and out of the main memory to the storage device,
-leading to a significant decrease in system performance.
+As a result, the operating system constantly swaps data in and out of the main memory to the 
+storage device,leading to a significant decrease in system performance.
+
+Example:
+Imagine you're working on a computer with multiple applications open simultaneously,
+such as a web browser, a video editing software, and a music player. Each of these applications 
+requires a certain amount of memory (RAM) to operate smoothly.
+
+However, if the total memory demand from all these applications exceeds the available physical 
+RAM, the operating system starts swapping data between RAM and the hard disk's virtual memory
+(swap space). Here's how thrashing could manifest in this scenario.
 ========================================================================
 RAID:
 Redundant Array of Independent Disks. 
@@ -153,18 +173,33 @@ RAID is a technology that combines multiple hard drives into a single logical un
 to improve data storage performance, reliability, or a combination of both.
 The idea behind RAID is to use several disks together in ways that provide benefits such as 
 increased data protection, better performance, or a balance between the two.
+RAID (Redundant Array of Independent Disks) is like having backup copies of your important 
+files stored in different places on several hard drives or solid-state drives (SSDs).
+If one drive stops working, your data is still safe because you have other copies stored on the
+other drives. It’s like having a safety net to protect your files from being lost if one of your 
+drives breaks down.
 
 There are different RAID levels, each offering different advantages. Here are some common RAID levels explained briefly:
 
-RAID 0 (Striping): Data is split across multiple drives, improving performance because multiple disks can be read or written to simultaneously. However, there is no redundancy, so if one drive fails, all data is lost.
+RAID 0 (Striping): Data is split across multiple drives, improving performance because 
+                   multiple disks can be read or written to simultaneously. However, there is no
+                   redundancy, so if one drive fails, all data is lost.
 
-RAID 1 (Mirroring): Data is duplicated on two or more drives. This provides redundancy, meaning if one drive fails, the data is still available on the mirrored drive(s). However, it doesn't offer a performance improvement.
+RAID 1 (Mirroring): Data is duplicated on two or more drives. This provides redundancy, 
+                    meaning if one drive fails, the data is still available on the mirrored drive(s). 
+                    However, it doesn't offer a performance improvement.
 
-RAID 5 (Striping with Parity): Similar to RAID 0 in terms of performance, but it includes parity information, which allows for data recovery in case one drive fails. RAID 5 requires a minimum of three drives.
+RAID 5 (Striping with Parity): Similar to RAID 0 in terms of performance,
+                               but it includes parity information, which allows for data recovery in case one drive fails.
+                               RAID 5 requires a minimum of three drives.
 
-RAID 10 (Combination of RAID 1 and RAID 0): It combines mirroring (RAID 1) and striping (RAID 0). Data is both mirrored and striped for both performance and redundancy. RAID 10 requires a minimum of four drives.
+RAID 10 (Combination of RAID 1 and RAID 0): It combines mirroring (RAID 1) and striping (RAID 0).
+                  Data is both mirrored and striped for both performance and redundancy. 
+                  RAID 10 requires a minimum of four drives.
 
-RAID 6 (Striping with Dual Parity): Similar to RAID 5, but with two sets of parity information. This allows for the system to recover from the failure of up to two drives. RAID 6 requires a minimum of four drives
+RAID 6 (Striping with Dual Parity): Similar to RAID 5, but with two sets of parity information. 
+                  This allows for the system to recover from the failure of up to two drives. 
+                  RAID 6 requires a minimum of four drives
 ==========================================
 Deadlock:
       A Deadlock is a situation where each of the computer processes waits for a resource 
@@ -173,30 +208,44 @@ Deadlock:
       some other resource to be released.
 
 Key characteristics of deadlocks include:
-
+conditions to achieve a deadlock: Mutual Exclusion,Hold and wait , no preemption and circular wait.
 Mutual Exclusion: 
-      Processes contend for exclusive control over resources, meaning that once a process holds a resource, others are excluded from using it.
+      Processes contend for exclusive control over resources, meaning that once a process holds a 
+      resource, others are excluded from using it.
 
 Hold and Wait: 
-      Processes hold resources while waiting for others, creating a situation where resources are not released until new resources are obtained.
+      Processes hold resources while waiting for others, creating a situation where resources
+      are not released until new resources are obtained.
 
 No Preemption: 
-      Resources cannot be forcibly taken away from a process; they must be released voluntarily.
+      Resources cannot be forcibly taken away from a process; 
+      they must be released voluntarily.
 
 Circular Wait: 
-      There is a circular chain of processes, each waiting for a resource held by the next process in the chain.
+      There is a circular chain of processes, each waiting for a resource held by the
+      next process in the chain.
 ====================================================
 What is fragmentation? Types of fragmentation.
-    As the process is loaded and unloaded from memory, these areas are fragmented into small pieces of memory that cannot
-    be allocated to incoming processes. It is called fragmentation.Processes can’t be assigned to memory blocks due to their small size, 
-    and the memory blocks stay unused. It is also necessary to understand that as programs are loaded and deleted from memory, 
-    they generate free space or a hole in the memory. These small blocks cannot be allotted to new arriving processes, resulting in 
-    inefficient memory use.
+    As the process is loaded and unloaded from memory, these areas are fragmented into small 
+    pieces of memory that cannot be allocated to incoming processes. It is called fragmentation.
+    Processes can’t be assigned to memory blocks due to their small size, and the memory
+    blocks stay unused. It is also necessary to understand that as programs are loaded and deleted
+    from memory, they generate free space or a hole in the memory. These small blocks cannot be 
+    allotted to new arriving processes, resulting in inefficient memory use.
 
+            Fragmentation is generally considered undesirable in computer systems because it
+            leads to inefficient use of storage space and can degrade performance due to increased
+            overhead in managing fragmented resources. Therefore, it is not beneficial and 
+            efforts are often made to minimize or eliminate fragmentation where possible.
     Internal Fragmentation:
     ======================
     Definition: Internal fragmentation occurs when allocated memory blocks have unused space within them, 
     which is not utilized by the system.
+
+    Example: Imagine you're packing items into boxes for a move. 
+             You have standard-sized boxes, but some items are smaller than the box size. 
+             If you use a large box for small items without filling it completely, 
+             you experience internal fragmentation because space inside the box is wasted.
 
     Example: In a file system, if a file is allocated a fixed-size block of memory, and it doesn't fully utilize that space,
     the remaining space is wasted and contributes to internal fragmentation.
@@ -210,14 +259,26 @@ What is fragmentation? Types of fragmentation.
     As blocks are freed up, the memory may become fragmented with small pockets of free space scattered around. 
     Even though the total free space might be enough for a new allocation, finding a contiguous block of that size might be difficult due to external fragmentation.
 
+    Example:
+      Imagine a library where books of different sizes are placed on shelves in a somewhat random
+      order, depending on when they were returned. Each shelf has limited space, and when a book 
+      is borrowed, the shelf space it occupied becomes available. However, the next book returned may 
+      not fit perfectly into that space because it's either too big or the remaining space is too small.
+      So, even though there might be plenty of total space available across all shelves,
+      the library staff can't efficiently use it because the available space is fragmented into small,
+      non-contiguous sections. This makes it challenging to store new books in an organized manner 
+      without constantly rearranging the existing books or leaving gaps between them.
+      This situation mirrors external fragmentation in computer memory management, 
+      where available memory is divided into non-contiguous blocks, leading to inefficiency in space utilization.
 ===================================================================================================================
 What is spooling ? 
     Spooling stands for "Simultaneous Peripheral Operations On-Line."
-    It is a computer term that refers to a process where data is temporarily stored in a queue to be processed by a device or program.
+    It is a computer term that refers to a process where data is temporarily stored in a queue to
+    be processed by a device or program.
     The primary purpose of spooling is to improve the overall efficiency and performance 
     of a computer system by allowing multiple tasks to be performed concurrently.
+
     Here's how spooling generally works:
-    
     Input/Output (I/O) Operations: 
         When a computer system needs to perform input or output operations, 
         such as printing a document or reading data from a disk, these operations can be time-consuming.
