@@ -183,5 +183,112 @@ No Preemption:
 
 Circular Wait: 
       There is a circular chain of processes, each waiting for a resource held by the next process in the chain.
+====================================================
+What is fragmentation? Types of fragmentation.
+    As the process is loaded and unloaded from memory, these areas are fragmented into small pieces of memory that cannot
+    be allocated to incoming processes. It is called fragmentation.Processes can’t be assigned to memory blocks due to their small size, 
+    and the memory blocks stay unused. It is also necessary to understand that as programs are loaded and deleted from memory, 
+    they generate free space or a hole in the memory. These small blocks cannot be allotted to new arriving processes, resulting in 
+    inefficient memory use.
 
+    Internal Fragmentation:
+    ======================
+    Definition: Internal fragmentation occurs when allocated memory blocks have unused space within them, 
+    which is not utilized by the system.
+
+    Example: In a file system, if a file is allocated a fixed-size block of memory, and it doesn't fully utilize that space,
+    the remaining space is wasted and contributes to internal fragmentation.
+
+    External Fragmentation:
+    ======================
+    Definition: External fragmentation occurs when free memory blocks are scattered throughout the system,
+    making it challenging to allocate a contiguous block of memory for a process or file, even if the total free space is sufficient.
+
+    Example: Imagine a memory system where blocks of memory are allocated and deallocated over time. 
+    As blocks are freed up, the memory may become fragmented with small pockets of free space scattered around. 
+    Even though the total free space might be enough for a new allocation, finding a contiguous block of that size might be difficult due to external fragmentation.
+
+===================================================================================================================
+What is spooling ? 
+    Spooling stands for "Simultaneous Peripheral Operations On-Line."
+    It is a computer term that refers to a process where data is temporarily stored in a queue to be processed by a device or program.
+    The primary purpose of spooling is to improve the overall efficiency and performance 
+    of a computer system by allowing multiple tasks to be performed concurrently.
+    Here's how spooling generally works:
+    
+    Input/Output (I/O) Operations: 
+        When a computer system needs to perform input or output operations, 
+        such as printing a document or reading data from a disk, these operations can be time-consuming.
+    Spooling Process: 
+        Instead of waiting for the I/O operation to complete before moving on to the next task,
+        spooling allows the system to store the data in a temporary queue (spool) while the actual device or program 
+        performs the required operation.
+    Concurrent Processing: 
+        Meanwhile, the system can continue with other tasks or processes, making the overall operation more efficient. 
+        This is particularly beneficial in scenarios where I/O operations are slower compared to the processing speed of the CPU.
+
+A common example of spooling is print spooling, 
+    where print jobs are stored in a queue (spool) instead of sending them directly to the printer. 
+    This allows users to continue working on their tasks while the printer processes the print jobs in the background. 
+    Similarly, spooling can be used for tasks like disk I/O, where data is queued for reading or writing operations.
+
+In summary, 
+    spooling is a technique used to enhance the efficiency of a computer system by allowing it to overlap input/output operations 
+    with other processing tasks. It helps in achieving a more streamlined and concurrent workflow.
+==================================================================================================================
+What is semaphore and mutex (Differences might be asked)? Define Binary semaphore. 
+    Mutexes and Semaphores are kernel resources that provide synchronization services (also known as synchronization primitives). 
+    Synchronization is required when multiple processes are executing concurrently,to avoid conflicts between processes using shared resources.
+    Semaphore:
+        A semaphore is a synchronization primitive used in concurrent programming to control access to shared resources.
+        It is an integer variable that, apart from initialization,
+        is accessed only through two atomic operations: wait (P) and signal (V).
+        Semaphore uses two atomic operations: wait and signal to solve critical section problems.
+        Example_by_striver:
+                A semaphore is simply a count variable and the queue. Initially, this count variable represents the number of resources available. 
+                If there are three restrooms and no person is there, the count is 3 and the queue is empty.
+                Whenever a person uses a restroom count is decreased and if the count becomes less than 0 after decrementing, 
+                it means no restrooms are available and the remaining persons are added to the queue.
+                The person waits in the queue before acquiring the restroom.
+
+                Technical Terms:
+                      There are two processes with semaphore. Wait and Signal. Before acquiring a resource you call the waiting process
+                      and after using the resource or critical section you call the signal process.
+                      The wait process simply decreases and the count signal process simply increases the count.
+=========================================================================================================================
+Binary Semaphore
+      A binary semaphore has values only true and false. 
+      We can use binary semaphore as mutex also but additional functionalities like wake up and sleep and queue
+      so that’s can be used in place of a mutex it provides additional functionalities like it has a queue and 
+      it has the sleep call whenever a process is already acquired a critical section if more process come they go to sleep.
+
+      Additional info:
+           A binary semaphore is a specific type of semaphore with only two possible values: 0 and 1. 
+          It is often used to implement mutex-like behavior where the semaphore value represents the availability of a resource. 
+          If the semaphore value is 1, the resource is available; if it's 0, the resource is currently in use. 
+          Binary semaphores are frequently used for mutual exclusion purposes, similar to mutexes.
+=================================================================================================================
+Mutex:
+    A mutex is a synchronization mechanism that provides exclusive access to a shared resource.
+    It ensures that only one thread or process can access the critical section at a time.
+    A mutex has two states: locked or unlocked.
+    A thread attempting to access the critical section must first acquire the mutex (lock it). 
+    If the mutex is already locked, the thread is typically blocked until the mutex becomes available. 
+    After finishing the critical section, the thread releases the mutex (unlocks it), allowing other threads to acquire it.
+
+===========================================================================================================================
+Differences:
+
+Functionality:
+
+Semaphore: Semaphores can be used for signaling, synchronization, and counting.
+Mutex: Mutex is designed specifically for providing exclusive access to a shared resource.
+Complexity:
+
+Semaphore: Semaphores are more versatile but can be complex to use, especially in scenarios involving multiple processes.
+Mutex: Mutexes are simpler and easier to use in situations where mutual exclusion is the primary concern.
+Counting:
+
+Semaphore: Semaphores can be initialized with a count greater than one, allowing multiple threads to access the critical section simultaneously (useful for scenarios like producer-consumer problems).
+Mutex: Mutexes are generally binary (locked or unlocked), allowing only one thread to access the critical section at a time.
       
