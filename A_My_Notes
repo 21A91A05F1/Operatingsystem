@@ -1,1 +1,92 @@
 Operating System:
+Operating System:
+      The operating system is an interface between the user and the machine. 
+      It also allows us to communicate with the computer without knowing how to speak the computer’s language.
+      It manages computer hardware, software resources, and provides common services for computer programs.
+      It manages the computer’s memory, processes, devices, files, and security aspects of the system.i.e. resource manager.
+Types of Os:
+      Batch OS:
+            DE:
+            Imagine you are the owner of a photography studio,
+            and you have a Batch Operating System in place to process and print photos. 
+
+
+            This type of operating system does not interact with the computer directly.
+            Os --------> cpu.
+            There is an operator which takes similar jobs having the same requirement and groups them into batches.
+            Os----> batch---> cpu
+            It is the responsibility of the operator to sort jobs with similar needs. 
+            Jobs---->Os----->batch----->cpu
+
+            Advantages:
+                  It is very difficult to guess or know the time required for any job to complete, but processors of the batch systems know how long the job would be when it is in the queue.  
+                  It is easy to manage large work repeatedly in batch systems.
+            Dis:
+                  Batch systems are hard to debug.
+                  It is sometimes costly.
+
+    Distributed OS:
+            DE:
+            Imagine you are part of a team working on a project, 
+            and your team members are spread across different locations.To enhance collaboration,
+            you decide to use a distributed operating system that allows 
+            seamless sharing of computing resources and I/O files.
+
+            It connects multiple computers via a single communication channel.
+            (daily life example: people in villagers meet at a large tree).
+            Individual systems that communicate via a single channel are regarded as a single entity and They're also known as loosely coupled systems.
+      
+      Multitasking OS:
+            Multitasking Operating System is simply a multiprogramming Operating System with having facility of a Round-Robin Scheduling Algorithm.
+            It can run multiple programs simultaneously.
+            It comes with proper memory management.
+
+            Dis adv:
+            The system gets heated in case of heavy programs multiple times.
+
+            Example:
+            Search engine.
+      Network OS:
+            These systems run on a server and provide the capability to manage data,
+                  users, groups, security, applications, and other networking functions. 
+            
+            A Network Operating System (NOS) is designed to manage and coordinate network resources, 
+                  allowing multiple computers to communicate and share resources within a network.
+            
+            Example:
+            File and Print Services:
+            
+            Users on different computers can share files seamlessly through NetOS.
+            Print services allow users to send print jobs to network printers, eliminating the need for direct connections.
+
+            Adv:
+            Highly stable centralized servers.
+            Security concerns are handled through servers.
+
+            Disadv:
+            Servers are costly.
+            User has to depend on a central location for most operations
+
+      Real-Time OS:
+            The time interval required to process and respond to inputs is very small. 
+            This time interval is called response time. 
+            Real-time systems are used when there are time requirements that are very strict like missile systems,
+            air traffic control systems, robots, etc. 
+
+            Types:
+            Hard -> time constraints very strict -> automatic parachute air bag.
+            Soft -> streaming services for netflix and prime interms of buffering.
+
+            Adv:
+            More output from all the resources.
+
+            Disadv:
+            The algorithms are very complex and difficult for the designer to write on.
+            Example:
+            weapon systems, robots, air traffic control systems.
+
+      Mobile OS:
+            Mobile operating systems are specialized operating systems designed
+            to run on mobile devices such as smartphones and tablets. 
+            They provide a platform for running applications, 
+            managing hardware resources, and facilitating communication between various components.
