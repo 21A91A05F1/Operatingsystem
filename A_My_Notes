@@ -346,12 +346,120 @@ Functionality:
 
 Semaphore: Semaphores can be used for signaling, synchronization, and counting.
 Mutex: Mutex is designed specifically for providing exclusive access to a shared resource.
-Complexity:
 
+Complexity:
 Semaphore: Semaphores are more versatile but can be complex to use, especially in scenarios involving multiple processes.
 Mutex: Mutexes are simpler and easier to use in situations where mutual exclusion is the primary concern.
-Counting:
 
+Counting:
 Semaphore: Semaphores can be initialized with a count greater than one, allowing multiple threads to access the critical section simultaneously (useful for scenarios like producer-consumer problems).
 Mutex: Mutexes are generally binary (locked or unlocked), allowing only one thread to access the critical section at a time.
       
+======================================================================
+Page replacement:(Efficient page replacement algorithms can significantly impact system
+      performance by minimizing the number of page faults (instances where a requested page is not
+      in memory)and maximizing the effective use of physical memory.)
+
+      Page replacement in operating systems is the mechanism of swapping out pages from memory to disk to accommodate new pages or processes
+      In operating systems, page replacement refers to the mechanism where the operating system selects a page in memory (RAM) to be evicted or swapped out to secondary storage (such as disk) to make room for a new page that needs to be loaded into memory. This is necessary when the system's physical memory (RAM) is full and a new page needs to be brought in from secondary storage.
+
+Key points:
+
+Purpose: Page replacement ensures that the most relevant or frequently accessed pages are kept in
+memory to optimize performance, while less frequently used pages are swapped out to make space.
+
+Algorithm: Various page replacement algorithms (like FIFO, LRU, LFU, etc.) dictate how the 
+operating system decides which page to evict when memory is full.
+
+Criteria: The choice of which page to replace is based on factors like how recently a page was
+accessed, how frequently it was accessed (frequency), or a combination of both.
+
+Impact: Efficient page replacement algorithms can significantly impact system performance
+by minimizing the number of page faults (instances where a requested page is not in memory) and maximizing the effective use of physical memory.
+
+Page replacement is a fundamental aspect of virtual memory management in modern 
+operating systems, enabling them to handle large and complex applications efficiently with 
+limited physical memory resources.
+=================================
+Page replacement algorithms:
+A page replacement algorithm is a method used by an operating system to decide which 
+page (portion of data or code) in memory (RAM) should be evicted (swapped out) when new pages 
+need to be loaded and there is insufficient space in memory. These algorithms aim to optimize 
+memory usage by selecting pages to replace based on specific criteria, such as recent usage
+patterns or frequency of access, to minimize the impact on system performance.
+
+To know more about these just go through the following link:(VVVIMP)
+https://www.geeksforgeeks.org/page-replacement-algorithms-in-operating-systems/
+
+1.FIFo:
+This is the simplest page replacement algorithm. 
+In this algorithm, the operating system keeps track of all pages in the memory in a queue, 
+the oldest page is in the front of the queue. 
+When a page needs to be replaced page in the front of the queue is selected for removal. 
+      Belady’s Anomaly: Bélády’s anomaly is the name given to the phenomenon where increasing 
+      the number of page frames results in an increase in the number of page faults for a given memory
+      access pattern.
+2.Optimal Page replacement: In this algorithm, pages are replaced which would not be used 
+      for the longest duration of time in the future.
+3.Least recently used:In this algorithm, page will be replaced which is least recently used. 
+4.Most recently used: In this algorithm, page will be replaced which is most recently used.
+
+==================================
+Starvation and Aging in Os:
+
+Starving in operating systems occurs when a process is unable to make progress because it is 
+consistently ignored or deprioritized by the scheduler in favor of other processes.
+Example:
+In daily life, "starving" can be compared to waiting in line at a popular food truck
+where the vendor consistently serves customers who arrived after you, leaving you without 
+the opportunity to place your order and get food. Similarly, in operating systems, a process 
+may starve if the scheduler continuously prioritizes other processes, preventing it from executing
+and completing its tasks.
+**** Another name for deadlock is Circular Waiting. Another name for starvation is Lived lock.
+Solution to Starvation: Aging
+
+Aging in operating systems is the process of gradually increasing the priority of a waiting
+process over time to prevent starvation.
+Aging in operating systems is a technique used in process scheduling to prevent starvation 
+by gradually increasing the priority of processes that have been waiting in the ready queue
+for an extended period, ensuring fair access to system resources over time. 
+This approach helps maintain system efficiency and responsiveness 
+by dynamically adjusting process priorities based on their waiting times.
+===============================================================================
+Why thradhing occurs???
+Thrashing occurs in operating systems when the system is overwhelmed by excessive paging activity,
+leading to a constant state of high paging and low CPU utilization. This typically happens because
+the system is spending more time swapping pages in and out of memory than executing actual instruct
+ions, usually due to insufficient physical memory (RAM) relative to the demands of running 
+processes. When there isn't enough physical memory to hold all the active processes' working sets,
+the operating system spends more time swapping pages between disk and memory, resulting in thrashing.
+High degree of multiprogramming(if number of processes keeps on increasing in the memory) ,
+lack of frames(if a process is allocated too few frames, then there will be too many 
+and too frequent page faults.) causes Thrashing.
+====================================================
+What is paging and why do we need it?
+Paging is a way to manage memory by dividing it into small,
+fixed-size blocks called pages, which can be placed anywhere in the physical memory, making it easier to use memory efficiently.
+It reduces issues like fragmentation.
+It divides the process's memory into fixed-sized blockscalled "pages" and the physical memory 
+into blocks of the same size called "frames." Pages can be loaded into any available frame in physical memory.
+
+Example:
+Imagine a large book divided into chapters (pages) stored in a library.
+Instead of requiring the chapters to be stored in consecutive shelves, the library allows 
+chapters to be placed on any available shelf (frames). When you need a specific chapter (page),
+the librarian (MMU) uses an index (page table) to find which shelf it is on. If the chapter is 
+not currently on a shelf but in a storage room (secondary storage), the librarian retrieves it 
+and places it on a shelf,possibly replacing another chapter if there are no free shelves.
+========================================================
+
+
+
+
+
+
+
+
+
+
+
