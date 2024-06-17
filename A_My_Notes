@@ -452,11 +452,372 @@ the librarian (MMU) uses an index (page table) to find which shelf it is on. If 
 not currently on a shelf but in a storage room (secondary storage), the librarian retrieves it 
 and places it on a shelf,possibly replacing another chapter if there are no free shelves.
 ========================================================
+Demand paging:
+      Demand paging is a memory management scheme where pages of a process are loaded into 
+      memory only when they are needed, rather than loading the entire process into memory at once. 
+      This helps in efficient use of memory and reduces the loading time.
+How It Works:
 
+Initial Load: Only a few pages (or none) of a process are loaded into memory initially.
+Page Fault: When the process tries to access a page that is not currently in memory,a page fault occurs.
+Page Load: The operating system loads the required page from the disk into memory.
+Execution Continues: The process resumes execution once the needed page is loaded.
+Example:
+Imagine you are reading a large book but only have a small desk. 
+Instead of placing the entire book on the desk, you only place the chapters you are currently
+reading. When you need a chapter that is not on the desk, you go to the bookshelf (disk) and
+get the chapter (page) you need, placing it on the desk (memory).
+This way, you efficiently use the limited space on your desk.
 
+=========================================================================
+Segmentation:
+      Segmentation is a memory management technique that divides the process's memory into
+      segments of different sizes, each representing a logical unit such as a function, array, or 
+      data structure.Unlike paging, segments can be of variable size.
+How It Works:
 
+Segmentation: The process is divided into different segments based on the logical division 
+               of its components.
+Segment Table: Each segment has a segment number and an offset within the segment. 
+                A segment table keeps track of the base address and length of each segment.
+Access: When accessing memory, the segment number and offset are used to locate the segment 
+        and the specific address within the segment.
+Example:
+Think of a book divided into sections (segments) such as introduction, chapters, appendices, etc. 
+Each section can be of a different length. If you want to read a specific chapter, you use the
+table of contents (segment table) to find the starting page (base address) and then read from
+there.This logical division makes it easy to manage and access different parts of the book efficiently.
+====================================================
+Demand paging is a method of virtual memory management which is based on the principle that pages should only be brought into memory if the executing process demands them. This is often referred to as lazy evaluation as only those pages demanded by the process are swapped from secondary storage to main memory.
+So demand paging works opposite to the principle of loading all pages immediately.
 
+Segmentation is a memory management technique in which the memory is divided into the variable size parts. Each part is known as a segment which can be allocated to a process.
 
+The details about each segment are stored in a table called a segment table. Segment table is stored in one (or many) of the segments.
+
+Segment table contains mainly two information about segment:
+Base: It is the base address of the segment
+Limit: It is the length of the segment.
+========================================================
+RTOS:(real time operating system)
+
+A Real-Time Operating System (RTOS) is an operating system designed to manage hardware
+resources and run applications that require precise timing and high reliability.
+RTOS ensures that critical tasks are completed within a guaranteed time frame, making them
+suitable for embedded systems, industrial applications, and mission-critical environments.
+
+Types of RTOS
+
+Hard Real-Time Operating Systems:
+Definition: These systems guarantee that critical tasks are completed within a strict deadline. 
+Missing a deadline can lead to catastrophic failures.
+Example: Airbag systems in cars, where failing to deploy on time can result in severe injury.
+
+Soft Real-Time Operating Systems:
+Definition: These systems also aim to meet deadlines, but missing a deadline occasionally is 
+acceptable and does not lead to system failure.Performance is important, but the consequences
+of missing a deadline are less severe.
+Example: Video streaming services, where occasional delays might cause slight lag or buffering
+but do not result in failure.
+
+Firm Real-Time Operating Systems:
+Definition: These systems tolerate occasional deadline misses, but such misses degrade
+the system's quality of service. Repeated or excessive misses may lead to significant problems.
+Example: Automated teller machines (ATMs), where occasional delays might be acceptable,
+but frequent delays can cause user dissatisfaction.
+
+Key Features of RTOS:
+Deterministic Behavior: RTOS provides predictable response times to events.
+Priority-Based Scheduling: RTOS often uses priority-based scheduling to ensure high-priority tasks receive the CPU time they need.
+Low Latency: RTOS is designed to handle interrupts and context switches with minimal delay.
+Resource Management: Efficiently manages hardware resources to ensure tasks meet their deadlines.
+Scalability: Can be scaled to support a variety of applications from small embedded systems to 
+            large complex systems.
+
+Examples of RTOS
+VxWorks: Used in aerospace and defense systems.
+FreeRTOS: Popular in embedded systems due to its lightweight nature and ease of use.
+QNX: Known for its robustness in automotive and industrial applications.
+RTLinux: An extension of the Linux operating system for real-time applications.
+
+Summary:
+========
+RTOS is crucial for applications where timely and reliable task execution is critical. 
+The choice of RTOS type depends on the severity of consequences if deadlines are missed, 
+ranging from hard real-time systems with strict deadline adherence to soft real-time 
+systems where occasional misses are acceptable.
+===========================================================
+Main memory:
+      Main memory, also known as primary memory or RAM (Random Access Memory), 
+      is a type of volatile memory in a computer system that temporarily stores data and instructions 
+      that the CPU needs to access quickly while performing tasks. It provides fast read and write
+      access to data, allowing the CPU to retrieve and process information efficiently during active operations.
+Secondary Memory:
+      Secondary memory, also known as secondary storage, refers to non-volatile storage devices 
+      that are used to store data and programs permanently.secondary memory retains data even when the
+      computer is turned off. Examples of secondary memory include 
+      hard drives, solid-state drives (SSDs), optical discs (CDs, DVDs), and USB flash drives.
+
+Differences between Main and Secondary memory:
+
+Speed:
+Main Memory: Faster (e.g., RAM), used for currently executing programs and data.
+Secondary Memory: Slower (e.g., hard drives, SSDs), used for long-term storage of data
+and programs.
+
+Volatility:
+Main Memory: Volatile, meaning data is lost when the power is turned off.
+Secondary Memory: Non-volatile, meaning data is retained even when the power is turned off.
+
+Purpose:
+Main Memory: Provides quick access to data and instructions needed by the CPU immediately.
+Secondary Memory: Provides permanent storage for data, programs, and the operating system.
+
+Cost:
+Main Memory: More expensive per unit of storage.
+Secondary Memory: Less expensive per unit of storage.
+
+Capacity:
+Main Memory: Generally smaller in capacity.
+Secondary Memory: Larger in capacity.
+
+Usage:
+Main Memory: Used for temporary storage while programs are running.
+Secondary Memory: Used for long-term storage of files and programs.
+
+Access Method:
+Main Memory: Random access, meaning any location can be accessed directly and quickly.
+Secondary Memory: Typically uses sequential or direct access methods, which are slower.
+
+Example:
+Main Memory: RAM (Random Access Memory).
+Secondary Memory: Hard Drive, SSD (Solid State Drive), USB Flash Drive.
+
+Summary:
+Main memory is fast, volatile, and used for temporary data storage needed for
+immediate processing, while secondary memory is slower, non-volatile, and used for
+long-term data storage.
+===========================================
+Static Binding:
+
+Static Binding:
+When a compiler acknowledges all the information required to call a function or all
+the values of the variables during compile time, it is called “static binding”.
+As all the required information is known before runtime, it increases the program efficiency 
+and it also enhances the speed of execution of a program. Static Binding makes a program very
+efficient, but it declines the program flexibility, as ‘values of variable’ and ‘function calling’
+are predefined in the program. Static binding is implemented in a program at the time of coding.
+Overloading a function or an operator is the example of compile time polymorphism i.e. static binding.
+
+Static binding refers to the linking of a method call to the method implementation during 
+compile-time, based on the type of the object at compile-time. This means that the decision
+on which method implementation to execute is made at compile-time and remains fixed at runtime. 
+Static binding is also known as early binding or compile-time binding. It is typically associated
+with languages that support static typing and inheritance mechanisms, where method 
+resolution is determined by the declared type of the variable or reference at compile-time.
+
+Example:
+Imagine you have a prescription from a doctor (the method call) that specifies a particular 
+medication (the method implementation). When you take your prescription to a pharmacy
+(compile-time), the pharmacist (compiler) identifies the medication based on the name and 
+dosage written on the prescription (static information). The pharmacist dispenses the specified
+medication without needing to consult the doctor again, as the decision on which medication to
+dispense is made at the time of prescription (compile-time) and remains fixed unless explicitly
+changed. This illustrates static binding, where the decision (method implementation) is determined
+at compile-time based on the type of the reference (prescription) provided.
+======================================================================================
+Dynamic binding:
+
+Dynamic Binding Calling a function or assigning a value to a variable, at run-time 
+is called “Dynamic Binding”. Dynamic binding can be associated with run time ‘polymorphism’
+and ‘inheritance’ in OOP. Dynamic binding makes the execution of a program flexible as it can 
+decide what value should be assigned to the variable and which function should be called, at the 
+time of program execution. But as this information is provided at run time it makes the 
+execution slower as compared to static binding.
+
+Dynamic binding refers to the linking of a method call to the method implementation at runtime,
+based on the actual type of the object being referenced. This allows the decision on which method
+implementation to execute to be deferred until runtime, depending on the specific object instance
+involved. Dynamic binding is also known as late binding or runtime binding and is a characteristic
+feature of object-oriented programming languages that support polymorphism through inheritance 
+and method overriding.
+
+Example:
+Think of a remote control (reference) that can control various devices like a TV, a DVD player, or
+a stereo system (actual objects). When you press the "power" button on the remote (method call), 
+it sends a signal to whichever device it's currently set to control:
+Remote Control Set to TV: Turns on the TV.
+Remote Control Set to DVD Player: Turns on the DVD player.
+Remote Control Set to Stereo System: Turns on the stereo system.
+Here, the actual action (which device gets powered on) is determined at the moment you press 
+the button (runtime), based on the current setting of the remote control. This illustrates dynamic 
+binding, where the specific implementation of an action is decided at runtime based on the current
+context.
+
+===============================================
+What is scheduling??
+
+Scheduling in operating systems is the process of deciding which task (or process) 
+the computer's CPU should work on at any given time.
+What it does: The scheduler is a part of the operating system that decides the order in
+              which tasks (or processes) run on the computer.
+Why it's important: There are usually many tasks that want to use the CPU, and the scheduler
+                    helps make sure the CPU is used efficiently and fairly.
+
+Goals of Scheduling:
+Fairness: Ensure that each process gets a fair share of the CPU.
+Efficiency: Maximize CPU utilization and system throughput.
+Response Time: Minimize the time from submission to the start of execution.
+Turnaround Time: Minimize the time from submission to completion.
+Waiting Time: Minimize the time a process spends waiting in the ready queue.
+Deadlines: Ensure time-critical processes meet their deadlines.
+==
+Turnaround Time:
+Definition: Turnaround time is the total time taken for a process to complete, from the moment 
+it is submitted to the moment it finishes execution.
+Formula: Turnaround Time = Completion Time - Arrival Time
+Example: If a process arrives at time 0 and finishes at time 10, its turnaround time is 10 units.
+==
+Response Time:
+Definition: Response time is the time from the submission of a request until the first response is produced, not the time it takes to complete the request.
+Formula: Response Time = First Response Time - Arrival Time
+Example: If a process arrives at time 0 and the CPU starts executing it at time 2, the responsetime is 2 units.
+==
+Waiting Time:
+Definition: Waiting time is the total time a process spends in the ready queue waiting for CPU time.
+Formula: Waiting Time = Turnaround Time - Burst Time (where Burst Time is the total time the process needs on the CPU)
+Example: If a process has a turnaround time of 10 units and a burst time of 7 units, its waiting time is 3 units.
+
+Summary:
+Turnaround Time: Total time from submission to completion.
+Response Time: Time from submission to the first response.
+Waiting Time: Time spent waiting in the ready queue.
+==
+Types of scheduling:
+
+Preemptive Scheduling: The operating system can suspend a currently running process to start or 
+                       resume another process.
+Examples: Round Robin, Shortest Remaining Time First (SRTF), and Priority Scheduling.
+
+Non-Preemptive Scheduling: Once a process starts executing, it runs to completion.
+Examples: First-Come, First-Served (FCFS), Shortest Job Next (SJN), and 
+          Priority Scheduling (non-preemptive).
+================
+Scheduling Algorithms in Operating Systems
+Understanding scheduling algorithms is crucial for optimizing CPU utilization and ensuring efficient process management. Here, we'll briefly explain each of the main scheduling algorithms followed by a detailed note.
+
+1. First-Come, First-Served (FCFS):
+Brief:
+Description: Processes are executed in the order they arrive.
+Type: Non-preemptive.
+Detailed Note:
+Mechanism: The scheduler maintains a queue where processes are added as they arrive. 
+The process at the front of the queue is selected next for execution.
+Advantages:
+Simple to implement.
+Predictable, as it follows a straightforward first-come, first-served approach.
+Disadvantages:
+Can cause the "convoy effect," where shorter processes wait for a long process to complete.
+Poor performance for time-sharing systems as it doesn't preempt processes.
+Example: If processes P1, P2, and P3 arrive at times 0, 1, and 2 with burst times of 5, 3, and 2
+respectively, the order of execution is P1 -> P2 -> P3.
+
+2. Shortest Job Next (SJN) / Shortest Job First (SJF):
+Brief:
+Description: Selects the process with the shortest burst time next.
+Type: Non-preemptive.
+Detailed Note:
+Mechanism: The scheduler selects the process with the smallest execution time from the
+ready queue.
+Advantages:
+Minimizes average waiting time.
+Efficient for batch processing.
+Disadvantages:
+Requires knowledge of the burst time in advance.
+Can cause "starvation" for longer processes.
+Example: If processes P1, P2, and P3 have burst times of 6, 2, and 8 respectively, 
+the order of execution is P2 -> P1 -> P3.
+
+3. Shortest Remaining Time First (SRTF):
+Brief:
+Description: Preemptive version of SJF, selects the process with the shortest remaining time.
+Type: Preemptive.
+Detailed Note:
+Mechanism: The scheduler preempts the currently running process if a new process arrives with
+a shorter burst time than the remaining time of the current process.
+Advantages:
+Further reduces average waiting time compared to SJF.
+Disadvantages:
+Can still lead to starvation.
+More complex to implement due to frequent context switches.
+Example: If processes P1, P2, and P3 arrive at time 0, with burst times 8, 4, and 2 respectively,
+and P2 arrives at time 1, the execution order may be P1 (1 unit) -> P2 (4 units) ->
+P1 (remaining 7 units).
+
+4. Round Robin (RR):
+Brief:
+Description: Each process gets a small fixed time slice (quantum) in turn.
+Type: Preemptive.
+Detailed Note:
+Mechanism: Processes are placed in a circular queue and each process is allocated a time slice.
+If a process doesn't complete within its time slice, it is moved to the back of the queue.
+Advantages:
+Fair and suitable for time-sharing systems.
+Good response time for interactive users.
+Disadvantages:
+The performance depends heavily on the length of the time quantum. Too short causes too many 
+context switches; too long causes poor response time.
+Example: If processes P1, P2, and P3 have burst times of 5, 3, and 2 respectively, and the time
+quantum is 2 units, the execution order could be P1 (2 units) -> P2 (2 units) -> P3 (2 units) -> P1 (3 units) -> P2 (1 unit).
+
+5. Priority Scheduling:
+Brief:
+Description: Processes are executed based on priority.
+Type: Can be preemptive or non-preemptive.
+Detailed Note:
+Mechanism: Each process is assigned a priority. The scheduler selects the process with the highest
+priority (smallest priority number).
+Advantages:
+Ensures important tasks are completed first.
+Disadvantages:
+Can cause "starvation" for lower priority processes.
+Requires a mechanism to assign priorities, which can be complex.
+Example: If processes P1, P2, and P3 have priorities 3, 1, and 2 respectively, the execution order
+is P2 -> P3 -> P1.
+
+6. Multilevel Queue Scheduling:
+Brief:
+Description: Processes are divided into different queues based on priority or type.
+Type: Preemptive.
+Detailed Note:
+Mechanism: Each queue can have its own scheduling algorithm. Processes are permanently
+assigned to a queue based on some criteria (e.g., priority, process type).
+Advantages:
+Differentiates and optimizes scheduling for different types of processes.
+Disadvantages:
+Fixed queue assignment can be inflexible.
+Example: System processes can be in one queue with Round Robin scheduling, while user processes 
+are in another queue with FCFS.
+
+7. Multilevel Feedback Queue Scheduling:
+Brief:
+Description: Similar to multilevel queue scheduling but allows processes to move between queues.
+Type: Preemptive.
+Detailed Note:
+Mechanism: Processes can move between queues based on their behavior and execution history.
+Typically, processes start in the highest priority queue and move to lower priority queues
+if they use too much CPU time.
+Advantages:
+Flexible and can adjust to process requirements dynamically.
+Disadvantages:
+Complex to implement and tune.
+Example: A process starts in a high-priority queue with a small time quantum. 
+If it doesn’t finish, it moves to a lower-priority queue with a larger time quantum.
+
+Summary:
+Each scheduling algorithm has its own strengths and weaknesses and is suitable for different
+types of tasks and system requirements. Understanding these algorithms helps in choosing the 
+right one for optimizing system performance and ensuring fair and efficient CPU utilization.
 
 
 
