@@ -1,25 +1,537 @@
-Oops(Object oriented 
-Classes and Objects
-Encapsulation
-Abstraction
-Inheritance
-Polymorphism
-Constructors and Destructors
-Operator Overloading
-Function Overloading
-Virtual Functions
-Pure Virtual Functions
-Templates
-Friend Functions
-Friend Classes
-Namespaces
-Static Members and Methods
-Abstract Classes
-Interface Classes
-Dynamic Binding
-Method Overriding
-Multiple Inheritance
-Copy Constructor
-Assignment Operator
-Type Casting (dynamic_cast, static_cast, reinterpret_cast, const_cast)
+Oops (object oriented programming language):Object-Oriented Programming (OOP) is a way to write software by creating objects that combine data and actions, making it easier to organize 
+and reuse code.
+
+Advantages of OOP:
+Modularity: Encapsulation allows for easy maintenance and modification of code.
+Reusability: Inheritance facilitates code reuse, reducing redundancy and improving efficiency.
+Flexibility and Scalability: Polymorphism and abstraction provide flexibility in designing and 
+implementing complex systems.
+Improved Code Organization: Classes and objects promote a more organized and
+intuitive structure for programming.
+Facilitates Problem Solving: OOP aligns closely with real-world entities and relationships,
+making it easier to model and solve problems.
+
+==================================================
+Class:
+
+A class in C++ is a user-defined data type that serves as a blueprint for creating objects. 
+It defines a set of properties (data members) and behaviors (member functions) that the objects
+created from the class will have. Classes encapsulate data 
+and functions that operate on the data, promoting modularity and code reuse.
+
+Explanation and Components of a Class:
+
+Class Declaration:
+The class declaration defines the structure and behavior of the class.
+It includes the class name, data members (variables), and member functions (methods).
+
+Access Specifiers:
+Private: Members declared under private are accessible only within the class. They are hidden from outside the class.
+Public: Members declared under public are accessible from outside the class. They define the interface for interacting with the objects.
+Protected: Members declared under protected are accessible within the class and by derived classes.
+
+Data Members:
+Variables that hold the data specific to the class.
+Also known as attributes or properties.
+
+Member Functions:
+Functions that define the behavior of the class.
+Also known as methods.
+
+Example program:
+class Room {
+    public:
+        double length;
+        double breadth;
+        double height;   
+
+        double calculate_area(){   
+            return length * breadth;
+        }
+
+        double calculate_volume(){   
+            return length * breadth * height;
+        }
+
+};
+
+======================================
+Object:
+An object in C++ is an instance of a class that encapsulates data and behavior defined by that class.
+An object in C++ is a concrete instance of a class that contains specific values for the class's 
+data members and can execute the class's methods.
+
+Instance of a Class:
+====================
+When you create an object, you are creating an instance of a class. This means that the object gets
+its own copy of the data members defined in the class and can use the methods of the class.
+Attributes and Methods:
+
+Attributes: The data members of a class that are specific to the object.
+Methods: The functions defined in the class that operate on the data members.
+
+Example  program:
+================
+class Car {
+  public:
+    string brand;   
+    string model;
+    int year;
+};
+
+int main() {
+  // Create an object of Car
+  Car carObj1;
+  carObj1.brand = "BMW";
+  carObj1.model = "X5";
+  carObj1.year = 1999;
+
+  // Create another object of Car
+  Car carObj2;
+  carObj2.brand = "Ford";
+  carObj2.model = "Mustang";
+  carObj2.year = 1969;
+
+  // Print attribute values
+  cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
+  cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+  return 0;
+}
+============================================================
+Encapsulation:
+
+Definition of :
+Encapsulation in C++ is a fundamental concept in object-oriented programming that
+involves bundling the data (attributes) and the methods (functions) that operate on the data 
+into a single unit called a class. It restricts direct access to some of the object's components,
+which is a means of preventing accidental interference and misuse of the data.
+
+Key Points of Encapsulation:
+
+Data Hiding:
+Encapsulation allows certain details of an object to be hidden from the rest of the code.
+The internal representation of an object is hidden from the outside, only exposing a limited 
+and controlled interface.
+
+Access Specifiers:
+Encapsulation is implemented using access specifiers:
+private: Members declared as private are accessible only within the same class.
+protected: Members declared as protected are accessible within the same class and by derived classes.
+public: Members declared as public are accessible from any part of the program.
+
+Controlled Access:
+Access to the data is controlled through public methods, commonly known as getters and setters, which provide controlled access and modification to the private data members.
+Example in C++ code:
+#include <iostream>
+using namespace std;
+
+class Car {
+private:
+    // Data Members (Attributes)
+    string brand;
+    int year;
+
+public:
+    // Constructor
+    Car(string b, int y) : brand(b), year(y) {}
+
+    // Public Getter for brand
+    string getBrand() {
+        return brand;
+    }
+
+    // Public Setter for brand
+    void setBrand(string b) {
+        brand = b;
+    }
+
+    // Public Getter for year
+    int getYear() {
+        return year;
+    }
+
+    // Public Setter for year
+    void setYear(int y) {
+        year = y;
+    }
+
+    // Public Method to Display Information
+    void displayInfo() {
+        cout << "Brand: " << brand << ", Year: " << year << endl;
+    }
+};
+
+int main() {
+    // Creating an object of the Car class
+    Car myCar("Toyota", 2020);
+
+    // Accessing public methods to interact with private data members
+    myCar.displayInfo();  // Output: Brand: Toyota, Year: 2020
+
+    // Modifying private data members through public setters
+    myCar.setBrand("Honda");
+    myCar.setYear(2022);
+
+    // Accessing updated information
+    myCar.displayInfo();  // Output: Brand: Honda, Year: 2022
+
+    return 0;
+}
+Explanation:
+Private Data Members:
+brand and year are private data members of the Car class,
+meaning they cannot be accessed directly from outside the class.
+
+Public Methods:
+Public methods like getBrand, setBrand, getYear, and setYear provide controlled access to 
+the private data members.
+The displayInfo method allows users to view the car's information without giving direct access 
+to the data members.
+
+Controlled Access:
+By using getters and setters, the class controls how the data members are accessed and
+modified. This ensures that the internal state of an object remains consistent and valid.
+
+Benefits of Encapsulation:
+Improved Security: Encapsulation protects the internal state of an object from unintended
+interference and misuse.
+Modularity: By bundling data and methods, encapsulation helps in organizing code into logical
+units or modules.
+Ease of Maintenance: Changes to the internal implementation of a class can be made without 
+affecting other parts of the program that use the class.
+Flexibility and Extensibility: Encapsulation allows the internal implementation of a class to be 
+changed or extended without impacting the overall system.
+Encapsulation is a key principle of object-oriented programming that helps in building robust,
+maintainable, and scalable software systems.
+============================================================
+Abstraction:
+
+Abstraction in C++:
+Abstraction in C++ is the process of hiding the complex implementation details and exposing 
+only the essential features of an object or a class to the outside world. It focuses on what
+an object does rather than how it does it, allowing developers to focus on solving higher-level
+problems without worrying about the intricate details of the implementation.
+
+Key Points of Abstraction:
+
+Focus on Essential Features:
+Abstraction allows programmers to focus on the essential aspects of an object or a
+class by hiding unnecessary implementation details.
+
+Data Hiding:
+Similar to encapsulation, abstraction involves hiding the internal state and 
+requiring interaction with objects through well-defined interfaces (public methods).
+
+Example of Abstraction:
+Suppose you have a Shape class with methods like calculateArea() and draw(). 
+The details of how the area is calculated or how the shape is drawn are hidden inside these
+methods. Users of the Shape class only need to know that they can calculate the area or draw
+the shape without needing to understand the specific algorithms or drawing mechanisms used.
+
+Implementation in C++:
+Abstraction in C++ is typically achieved using abstract classes and interfaces:
+Abstract Class: A class that cannot be instantiated and contains one or more pure virtual functions
+(virtual functions declared with = 0).
+Interface: A class that consists of only pure virtual functions, providing a contract for derived
+classes to implement.
+
+Example in C++ Code:
+#include <iostream>
+using namespace std;
+
+// Abstract Class
+class Shape {
+public:
+    // Pure Virtual Function (Abstract Method)
+    virtual void draw() = 0;
+
+    // Abstract Method for calculating area
+    virtual double calculateArea() = 0;
+};
+
+// Concrete Derived Class Rectangle
+class Rectangle : public Shape {
+private:
+    double width;
+    double height;
+
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+
+    // Implementation of draw method
+    void draw() override {
+        cout << "Drawing Rectangle" << endl;
+    }
+
+    // Implementation of calculateArea method
+    double calculateArea() override {
+        return width * height;
+    }
+};
+
+int main() {
+    // Creating an object of the Rectangle class
+    Rectangle rect(5, 3);
+
+    // Calling methods on the object without knowing internal details
+    rect.draw();  // Output: Drawing Rectangle
+    cout << "Area of Rectangle: " << rect.calculateArea() << endl;  // Output: Area of Rectangle: 15
+
+    return 0;
+}
+Explanation:
+
+Abstract Class (Shape):
+Defines a contract with pure virtual functions (draw and calculateArea) that must be overridden
+by any derived class.
+Users of the Shape class (like Rectangle) interact with these abstract methods without needing 
+to know how they are implemented in each specific shape.
+
+Concrete Class (Rectangle):
+Implements the abstract methods (draw and calculateArea) defined in the Shape class.
+Users can create and manipulate objects of the Rectangle class (and other derived shapes) 
+through the abstract interface provided by the Shape class.
+
+Benefits of Abstraction:
+Simplifies Complex Systems: By hiding implementation details, abstraction allows developers
+to focus on high-level design and functionality.
+Enhances Maintainability: Changes to the internal implementation of a class can be made without 
+affecting code that uses the class.
+Promotes Reusability: Interfaces defined by abstract classes and interfaces can be reused
+by multiple derived classes, promoting code reuse and modularity.
+In summary, abstraction in C++ allows for the creation of abstract classes and interfaces
+that define a clear, simplified view of objects and their behavior, shielding users from
+unnecessary complexity and details of implementation.
+============================================================
+Inheritance:
+
+Inheritance in C++:
+Inheritance is a fundamental concept in object-oriented programming (OOP)
+that allows a class (called a derived class or subclass) to inherit properties
+(attributes and methods) from another class (called a base class or superclass).
+This promotes code reuse and the creation of hierarchical relationships between classes.
+
+Key Concepts of Inheritance:
+
+Base Class and Derived Class:
+Base Class: Also known as a parent class or superclass, it is the class whose members are
+inherited by another class.
+Derived Class: Also known as a child class or subclass, it is the class that inherits from
+another class.
+
+Syntax in C++:
+In C++, inheritance is declared using the class keyword followed by a colon (:) 
+and the access specifier (public, protected, or private):
+
+class BaseClass {
+    // Base class members
+};
+
+class DerivedClass : access-specifier BaseClass {
+    // Derived class members
+};
+
+Access Specifiers (public, protected, private): Determines the visibility of the inherited members in the derived class.
+public inheritance: Public members of the base class become public members of the derived class.
+protected inheritance: Public and protected members of the base class become protected members of the derived class.
+private inheritance: Public and protected members of the base class become private members of the derived class.
+Types of Inheritance:
+
+Single Inheritance: A derived class inherits from only one base class.
+Multiple Inheritance: A derived class inherits from multiple base classes.
+Multilevel Inheritance: A derived class serves as a base class for another derived class, forming a chain of inheritance.
+Hierarchical Inheritance: Multiple derived classes inherit from a single base class.
+Hybrid Inheritance: Combination of multiple and hierarchical inheritance.
+Access Control and Visibility:
+
+Inherited members retain their original access level unless overridden by the derived class.
+Access specifiers control how inherited members can be accessed from outside the class hierarchy.
+Example in C++:
+===============
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class
+class Vehicle {
+  public: 
+    string brand = "Ford";
+    void honk() {
+      cout << "Tuut, tuut! \n" ;
+    }
+};
+
+// Derived class
+class Car: public Vehicle {
+  public: 
+    string model = "Mustang";
+};
+
+int main() {
+  Car myCar;
+  myCar.honk();
+  cout << myCar.brand + " " + myCar.model;
+  return 0;
+}
+
+=======================
+Benefits of Inheritance:
+Code Reusability: Allows reuse of existing classes without rewriting their code.
+Hierarchy and Modularity: Facilitates organizing classes into hierarchical relationships,
+promoting modular design.
+Polymorphism: Enables polymorphic behavior through function overriding.
+Ease of Maintenance: Changes to shared functionality can be made in the base class, 
+affecting all derived classes.
+Inheritance is a powerful mechanism in C++ that supports the principles of OOP, such as code
+reuse, modularity, and hierarchical organization, making it easier to build and maintain complex
+software systems.
+============================================================
+Polymorphism:
+
+Polymorphism in C++:
+Polymorphism is a key concept in object-oriented programming (OOP) that allows objects to be treated as instances of their parent class rather than their actual class. This enables one interface to be used for a general class of actions, with specific behavior determined at runtime based on the actual derived class of the object.
+
+Types of Polymorphism in C++:
+Compile-time Polymorphism (Static Polymorphism):
+
+Achieved through function overloading and operator overloading.
+The function to be called is determined at compile time.
+Run-time Polymorphism (Dynamic Polymorphism):
+
+Achieved through inheritance and virtual functions.
+The function to be called is determined at runtime.
+============
+Compile-time Polymorphism:
+Function Overloading:
+Multiple functions with the same name but different parameter lists.
+#include <iostream>
+using namespace std;
+
+class Print {
+public:
+    void show(int i) {
+        cout << "Integer: " << i << endl;
+    }
+
+    void show(double f) {
+        cout << "Float: " << f << endl;
+    }
+
+    void show(string s) {
+        cout << "String: " << s << endl;
+    }
+};
+
+int main() {
+    Print obj;
+    obj.show(5);       // Calls show(int)
+    obj.show(3.14);    // Calls show(double)
+    obj.show("Hello"); // Calls show(string)
+    return 0;
+}
+Operator Overloading:
+
+Defining custom behavior for operators.
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    float real;
+    float imag;
+
+public:
+    Complex() : real(0), imag(0) {}
+    Complex(float r, float i) : real(r), imag(i) {}
+
+    // Operator overloading
+    Complex operator + (const Complex &obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+
+    void display() {
+        cout << "Real: " << real << ", Imaginary: " << imag << endl;
+    }
+};
+
+int main() {
+    Complex c1(3.3, 4.4), c2(1.1, 2.2);
+    Complex c3 = c1 + c2; // Calls overloaded + operator
+    c3.display();
+    return 0;
+}
+==========
+Run-time Polymorphism:
+Inheritance and Virtual Functions:
+Base class pointer/reference to derived class objects.
+Virtual functions allow derived classes to override methods of the base class.
+cpp
+Copy code
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void display() {
+        cout << "Display of Base" << endl;
+    }
+
+    virtual ~Base() {} // Virtual destructor
+};
+
+class Derived : public Base {
+public:
+    void display() override {
+        cout << "Display of Derived" << endl;
+    }
+};
+
+void show(Base &obj) {
+    obj.display(); // Calls overridden method
+}
+
+int main() {
+    Base b;
+    Derived d;
+
+    show(b); // Output: Display of Base
+    show(d); // Output: Display of Derived
+
+    return 0;
+}
+Explanation:
+Virtual Functions:
+
+Declared in the base class using the virtual keyword.
+Allow derived classes to provide specific implementations.
+Base class pointers/references can call these functions and execute the derived class's version.
+Function Overriding:
+
+Derived class provides a specific implementation of a method declared in the base class.
+The override keyword can be used in C++11 and later for better readability and error checking.
+Base Class Pointer/Reference:
+
+Used to achieve dynamic binding.
+Can point to objects of any derived class and call overridden methods at runtime.
+Benefits of Polymorphism:
+Flexibility and Maintainability:
+
+Write more generic and reusable code.
+Easily extend the code with new derived classes without modifying existing code.
+Code Abstraction:
+
+Hide implementation details and provide a consistent interface.
+Dynamic Behavior:
+
+Implement runtime decision-making in method execution based on the actual object type.
+Summary:
+Polymorphism in C++ enables objects to be treated as instances of their parent class, 
+providing flexibility in method execution. It is achieved through function overloading 
+and operator overloading (compile-time polymorphism) and inheritance with virtual functions
+(run-time polymorphism). Polymorphism enhances code reusability, maintainability, and
+extensibility, making it a fundamental concept in OOP.
+===========================================================
 
