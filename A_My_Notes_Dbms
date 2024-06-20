@@ -1124,10 +1124,123 @@ complex reporting needs. While it introduces redundancy and potential maintenanc
 the benefits in terms of query performance and simplicity can outweigh the downsides in specific
 use cases.
 =======================================================================
+Functional Dependency:
+Functional dependency is a concept in the field of database management systems
+(DBMS) that describes a relationship between two sets of attributes within a
+database table. It is crucial for the process of database normalization, which is 
+used to reduce redundancy and improve data integrity.
+
+A functional dependency is a constraint that specifies the relationship
+between two sets of attributes where one set can accurately determine the value of other
+sets. It is denoted as X → Y, where X is a set of attributes that is capable of
+determining the value of Y. The attribute set on the left side of the arrow, X is
+called Determinant,while on the right side, Y is called the Dependent.
+=====================================================================
+E-R Model ? 
+The Entity-Relationship (E-R) Model is a high-level conceptual data model used 
+to define the structure of a database. It describes the data in terms of entities,
+attributes, and relationships. The E-R model is widely used in database design to 
+create a blueprint of the data and its interconnections before actual implementation
+in a database management system (DBMS).
+
+ER model stands for an Entity-Relationship model. 
+It is a high-level data model. This model is used to define the data elements and
+relationship for a specified system.
+It develops a conceptual design for the database. It also develops a very simple
+and easy to design view of data.
+In ER modelling, the database structure is portrayed as a diagram called 
+an entity-relationship diagram.
+
+====================================================
+Serializability:
+Serializability in DBMS is the property that ensures a concurrent schedule of
+transactions results in the same state as if the transactions were executed serially,
+one after the other.
 
 
+DBMSలో సీరియలైజబిలిటీ అనేది సమాంతర లావాదేవీల షెడ్యూల్ ను వరుసగా ఒకదాని 
+తర్వాత ఒకటి అమలు చేసినట్లయితే వచ్చే ఫలితాన్ని సరిగ్గా తెచ్చే గుణం.
+========================================================
+What is CCP ? (Concurrency Control Protocols) 
+Concurrency Control Protocols (CCP) are mechanisms implemented in Database 
+Management Systems (DBMS) to ensure that transactions are executed 
+concurrently without leading to inconsistencies in the database.
 
+Types of Concurrency Control Protocols
+Lock-Based Protocols:
 
+Shared Lock (S): Allows a transaction to read a data item.
+Exclusive Lock (X): Allows a transaction to read and write a data item.
+Two-Phase Locking (2PL): Ensures serializability by requiring that all locks be acquired
+before any are released. It has two phases:
+Growing Phase: Transactions may obtain locks but cannot release any.
+Shrinking Phase: Transactions may release locks but cannot obtain any new locks.
 
+Timestamp-Based Protocols:
 
+Timestamps: Assign a unique timestamp to each transaction to order them.
+Timestamp Ordering (TO): Ensures that transactions execute in the order of their 
+timestamps, ensuring serializability.
+Basic TO: Uses timestamps to ensure that conflicting operations are executed 
+in timestamp order.
+Strict TO: Ensures that once a transaction writes an item, no other transaction
+with a later timestamp reads or writes that item until the transaction commits.
+Optimistic Concurrency Control (OCC):
 
+Based on the assumption that conflicts are rare.
+Phases:
+Read Phase: Transactions read and make tentative changes.
+Validation Phase: Checks for conflicts before committing.
+Write Phase: If validation is successful, the changes are applied.
+Transactions proceed without locking resources and are validated before commit.
+Multiversion Concurrency Control (MVCC):
+
+Maintains multiple versions of data items to increase concurrency.
+Transactions access the version of the data item appropriate to their timestamps.
+Ensures that readers do not block writers and vice versa.
+
+Examples of Anomalies Prevented by CCP
+Lost Update: When two transactions read the same data and then update it, causing
+one update to be lost.
+Dirty Read: When a transaction reads data written by another transaction that has
+not yet committed.
+Non-repeatable Read: When a transaction reads the same data twice and get
+s different results due to another transaction’s update.
+Phantom Read: When a transaction reads a set of rows matching a condition,
+and another transaction inserts or deletes rows that would affect the result 
+set of the first transaction if it re-executes the query.
+Significance
+Concurrency control protocols are essential for:
+
+Ensuring database consistency and integrity in multi-user environments.
+Maximizing the performance by allowing concurrent transaction execution.
+Preventing data anomalies and maintaining the ACID properties of transactions.
+
+Summary
+Concurrency Control Protocols are crucial mechanisms in DBMS that ensure 
+transactions execute in a way that maintains database consistency, integrity, 
+and isolation, preventing various types of anomalies and ensuring that the database 
+can handle multiple concurrent operations safely and efficiently.
+=======================================================
+Entity, Entity Type, Entity Set, Weak Entity Set.. 
+Entity in DBMS can be a real-world object with an existence, For example, in a College database, the entities can be Professor, Students, Courses, etc.
+
+The entity type is a collection of the entity having similar attributes.
+
+Types of Entity type:
+
+Strong Entity Type:Strong entities are those entity types which
+have a key attribute. The primary key helps in identifying each entity uniquely.
+It is represented by a rectangle.
+
+Weak Entity Type: Weak entity type doesn't have a key attribute. 
+Weak entity types can't be identified on their own. It depends upon some other 
+strong entity for its distinct identity.
+
+Entity Set: Entity Set is a collection of entities of the same entity type.
+We can say that entity type is a superset of the entity
+set as all the entities are included in the entity type.
+===========================================
+https://takeuforward.org/interviews/must-do-questions-for-dbms-cn-os-interviews-sde-core-sheet/
+
+differences pending !!!!!!!!!!!!!!!!!!!!!!!
