@@ -1,0 +1,108 @@
+AWS Global Infrastructure::
+
+What is an AWS Region?
+An AWS Region is a separate geographic area where AWS provides a set of cloud services.
+Each Region consists of multiple, isolated locations known as Availability Zones.
+
+What is an Availability Zone?
+An Availability Zone (AZ) is a distinct location within a Region that is isolated from other AZs in the same Region.
+Each AZ has its own power, cooling, and networking infrastructure.
+
+What are Edge Locations?
+Edge Locations are part of AWS's content delivery network (CDN), known as Amazon CloudFront.
+They are used to cache copies of content closer to end-users, reducing latency and improving the user experience.
+
+Global
+  ├── Region (e.g., us-east-1)
+  │    ├── Availability Zone (e.g., us-east-1a)
+  │    ├── Availability Zone (e.g., us-east-1b)
+  │    └── Availability Zone (e.g., us-east-1c)
+  ├── Region (e.g., eu-west-1)
+  │    ├── Availability Zone (e.g., eu-west-1a)
+  │    ├── Availability Zone (e.g., eu-west-1b)
+  │    └── Availability Zone (e.g., eu-west-1c)
+  └── Edge Locations
+
+AWS Global Accelerator
+
+AWS Global Accelerator is a networking service that improves the availability and performance
+of your applications with a global user base. It uses the vast AWS global network infrastructure to
+direct your user traffic to optimal endpoints.
+
+AWS Direct Connect
+
+AWS Direct Connect is a cloud service solution that establishes a dedicated network connection
+from your premises to AWS. This dedicated connection can increase bandwidth throughput 
+and provide a more consistent network experience than internet-based connections.
+================================================================================================================
+2. Compute Services
+
+Amazon EC2 (Elastic Compute Cloud)
+Overview
+Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud. 
+It is designed to make web-scale cloud computing easier for developers by offering a variety of instance types
+and pricing options to suit different workloads.
+
+Key Features:
+Virtual Servers (Instances): Launch and manage virtual servers to run applications.
+Instance Types: Wide selection of instance types optimized for different use cases (e.g., compute-intensive,
+memory-intensive, storage-intensive).
+Scalability: Easily scale up or down based on demand.
+Flexible Pricing:
+On-Demand: Pay for compute capacity by the hour or second with no long-term commitments.
+Reserved Instances: Save up to 75% over On-Demand by committing to a one- or three-year term.
+Spot Instances: Bid for unused capacity and get up to 90% discount.
+Elastic Block Store (EBS): Persistent block storage for EC2 instances.
+Security: Secure, isolated instances with customizable security groups and network configurations.
+Networking: Virtual Private Cloud (VPC) for network isolation and advanced networking features.
+Elasticity: Auto Scaling to automatically adjust capacity based on demand.
+
+Use Cases:
+Web Hosting: Host websites and web applications with varying traffic patterns.
+Big Data and Analytics: Run large-scale data processing workloads.
+Machine Learning: Train and deploy machine learning models.
+High Performance Computing (HPC): Perform complex simulations and calculations.
+Dev/Test Environments: Quickly set up and tear down development and testing environments.
+============================
+AWS Lambda
+
+AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers.
+It automatically scales applications by running code in response to triggers from other AWS services or HTTP
+requests via Amazon API Gateway.
+
+Key Features:
+Serverless: No need to manage infrastructure; focus solely on writing code.
+Automatic Scaling: Scales automatically with the size of the workload, from a few requests per day to thousands per second.
+Event-Driven: Executes code in response to events from services like S3, DynamoDB, Kinesis, SNS, and API Gateway.
+Cost-Efficiency: Pay only for the compute time you consume—billed in 1ms increments.
+Integrated with AWS Services: Seamlessly integrates with various AWS services for triggering functions, 
+managing application state, and more.
+Support for Multiple Languages: Supports Node.js, Python, Ruby, Java, Go, .NET Core, and custom runtimes.
+Short Execution Time: Each function execution can last up to 15 minutes.
+Use Cases:
+Data Processing: Real-time file processing, data transformation, and ETL tasks.
+Web Backends: Create serverless APIs and backend services.
+Automation: Automate operational tasks and workflows.
+IoT Backends: Process data from IoT devices in real-time.
+Mobile Backends: Build backends for mobile applications with low latency.
+========================================
+AWS ECS (Elastic Container Service) is a fully managed tool for running Docker containers. 
+It makes it easy to deploy, scale, and manage containerized applications. ECS works well with
+other AWS services and lets you run apps without managing servers using
+AWS Fargate or by managing clusters of EC2 instances.
+==========================================
+AWS EKS (Elastic Kubernetes Service) is a fully managed service for running Kubernetes on AWS.
+It simplifies deploying, managing, and scaling containerized applications using Kubernetes. 
+EKS integrates with other AWS services for security, scalability, and monitoring,
+allowing you to run Kubernetes without managing the underlying infrastructure.
+=================================================================================================
+3. Storage Services
+
+Amazon S3 (Simple Storage Service)
+Amazon S3 is a cloud storage service that lets you store and retrieve any amount of data from anywhere. 
+It is designed for durability, scalability, and security. You can store different types of data like photos, videos, 
+and documents in "buckets," which are like containers. S3 offers features like versioning to keep multiple versions of an object, 
+and lifecycle policies to manage data automatically. It's widely used for backup, data archiving, big data analytics, and hosting
+static websites. S3 integrates seamlessly with other AWS services, ensuring easy and efficient data management.
+==============================================
+
