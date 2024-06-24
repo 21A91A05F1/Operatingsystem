@@ -185,3 +185,188 @@ https://www.geeksforgeeks.org/tcp-ip-model/
 OSI model:
 https://www.geeksforgeeks.org/open-systems-interconnection-model-osi/
 =====================================================
+Gateway:
+A gateway is a network node that connects two different networks, often using different protocols, and facilitates communication between them.
+
+Router:
+A router is a networking device that directs data packets between computer networks, determining the best path for the data to travel.
+
+Daily Life Examples
+Gateway Example:
+
+Internet Gateway: Think of your home internet modem/router provided by your ISP. 
+It acts as a gateway, connecting your home network (LAN) to the broader Internet (WAN), enabling devices
+in your home to communicate with external servers and websites.
+
+Router Example:
+Home Wi-Fi Router: The Wi-Fi router in your home directs data between your devices
+(like smartphones, laptops, and smart TVs) and the modem. It decides the best path for data to travel
+within your home network, ensuring that internet access is efficiently shared among all connected devices.
+
+================================================================================
+DNS: Converts domain names to IP addresses for accessing Internet resources.
+DNS Forwarder: Servers that forward DNS queries to upstream DNS servers, improving efficiency and reducing load.
+NIC: Hardware that enables computers to connect to networks and transmit data, identified by a unique MAC address.
+
+
+MAC address (Media Access Control address) is a unique identifier assigned to a network interface controller (NIC) for 
+communication on a network. It is a hardware address that identifies a device's presence on a network at the data link layer (Layer 2) 
+of the OSI model. MAC addresses are typically assigned by manufacturers and are used for addressing and delivering data packets 
+between devices within a local network.
+==================================================================================
+What is IP address, private IP address, public IP address, APIPA ? 
+An IP address is a unique address that identifies a device on the internet or a local network. IP stands for 
+"Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network.
+
+Private IP Address - There are three ranges of IP addresses that have been reserved
+for IP addresses. They are not valid for use on the internet. If you want to access the
+internet on these private IPs, you must use a proxy server or NAT server.
+
+Public IP Address - A public IP address is an address taken by the Internet Service
+Provider which facilitates communication on the internet.
+
+APIPA stands for Automatic Private IP Addressing (APIPA). It is a feature or characteristic in operating systems (eg. Windows)
+which enables computers to self-configure an IP address and subnet mask automatically when their DHCP(Dynamic Host Configuration Protocol
+:A DHCP Server is a network server that automatically provides and assigns IP addresses, default gateways and other network parameters 
+to client devices.It relies on the standard protocol known as Dynamic Host Configuration Protocol) server isn't reachable
+===================================================================================
+What is subnet ? 
+A subnet is a network inside a network achieved by the process called subnetting which helps divide
+a network into subnets. It is used for getting a higher routing efficiency and enhances the security of the network. 
+It reduces the time to extract the host address from the routing table.
+
+Firewalls 
+The firewall is a network security system that is used to monitor the incoming
+and outgoing traffic and blocks the same based on the firewall security policies.
+It acts as a wall between the internet (public network) and the networking devices (a private network).
+It is either a hardware device, software program, or a combination of both. It adds a layer of security to the network.
+
+Types of delays::
+
+Transmission Delay:
+Definition: The time required to push all the packet's bits into the link.
+Factors: Determined by the size of the packet (in bits) and the transmission rate (bandwidth) of the link.
+Formula: Transmission Delay = Packet Size (in bits) / Transmission Rate (in bits per second)
+
+Propagation Delay:
+Definition: The time it takes for a signal to travel from the sender to the receiver over the transmission medium.
+Factors: Depends on the distance between sender and receiver and the speed of the medium (e.g., fiber optic, copper wire).
+Formula: Propagation Delay = Distance / Propagation Speed
+
+Queueing Delay:
+Definition: The time a packet spends waiting in a router's output queue before it can be transmitted.
+Factors: Depends on the level of congestion in the network and the scheduling algorithms used by routers to prioritize packet 
+transmission.
+Impact: Can vary greatly depending on network load and router configuration.
+
+Processing Delay:
+Definition: The time it takes for a router or a host to process a packet header and decide where to forward it.
+Factors: Includes packet inspection, routing table lookup, error checking, and other processing tasks performed by network devices.
+Impact: Influenced by the complexity of protocols and the capabilities of network devices.
+
+=================================================================================
+Three-way handshaking is a method used in TCP/IP networks to establish a reliable connection between two 
+devices (typically a client and a server). Here’s a short explanation of the process:
+
+SYN (Synchronize):
+
+The client sends a SYN packet to the server, indicating its intention to establish a connection and specifying an initial
+sequence number for data transmission.
+SYN-ACK (Synchronize-Acknowledge):
+
+Upon receiving the SYN packet, if the server is available and willing to establish a connection, it responds with a SYN-ACK packet.
+This packet acknowledges the client's SYN packet and includes its own initial sequence number.
+ACK (Acknowledge):
+
+Finally, the client acknowledges the server's SYN-ACK packet by sending an ACK packet. This packet confirms receipt of the server's 
+SYN-ACK packet and completes the three-way handshake process. From this point onwards, both sides can start exchanging data packets 
+reliably.
+Purpose: Three-way handshaking ensures that both the client and server agree on the initial sequence numbers for data transmission and
+confirms that each party is ready to establish a connection before actual data transmission begins. This process helps in establishing
+reliable connections in TCP/IP networks, mitigating potential issues like packet loss and ensuring data integrity.
+
+==============================================================================================================
+RSA Algorithm 
+RSA algorithm is an asymmetric cryptography algorithm. Asymmetric actually means that it works on two different keys i.e.
+Public Key and Private Key. As the name describes, the Public Key is given to everyone and the Private key is kept private.
+
+An example of asymmetric cryptography : A client (for example browser) sends its public key to the server and requests for some data. 
+The server encrypts the data using the client's public key and sends the encrypted data. Client receives this data and decrypts it. 
+Since this is asymmetric, nobody else except the browser can decrypt the data even if a third party has the public key of the browser.
+===============================================================================================================
+What is HTTP and HTTPS protocol ? 
+HTTP is the HyperText Transfer Protocol which defines the set of rules and standards on how the information
+can be transmitted on the World Wide Web (WWW). It helps the web browsers and web servers for communication. 
+It is a ‘stateless protocol’ where each command is independent with respect to the previous command. 
+HTTP is an application layer protocol built upon the TCP. It uses port 80 by default. HTTPS is the HyperText Transfer Protocol
+Secure or Secure HTTP. It is an advanced and a secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security.
+It enables secure transactions by encrypting the communication and also helps identify network servers securely. 
+It uses port 443 by default.
+====================================================================================================
+SMTP is the Simple Mail Transfer Protocol. SMTP sets the rule for communication between servers. 
+This set of rules helps the software to transmit emails over the internet. 
+It supports both End-to-End and Store-and-Forward methods. It is in always-listening mode on port 25.
+
+TCP is a connection-oriented protocol, whereas UDP is a connectionless protocol.
+A key difference between TCP and UDP is speed, as TCP is comparatively slower than UDP. 
+Overall, UDP is a much faster, simpler, andefficient protocol, however, retransmission of lost data packets is only possible with TCP.
+TCP provides extensive error checking mechanisms. It is because it provides flow control and acknowledgment of data.
+UDP has only the basic error checking mechanism using checksums.
+==================================================================================================
+A server-side load balancer is a component in a network architecture that distributes incoming client requests
+across multiple servers or backend resources. Here's a concise explanation:
+
+Function:
+Distribution: It evenly distributes incoming network traffic or client requests across multiple servers.
+Optimization: Helps optimize resource utilization, improve responsiveness, and maintain high availability.
+Advantages:
+Enhanced Performance: It helps in balancing the load, which helps in avoiding
+==============================================================================================
+What happens when you enter “google.com”?????????????????? (very very famous question) 
+Check the browser cache first if the content is fresh and present in the cache display the same.
+If not, the browser checks if the IP of the URL is present in the cache (browser and OS) if not then requests 
+the OS to do a DNS lookup using UDP to get the corresponding IP address of the URL from the DNS server to establish 
+a new TCP connection.
+A new TCP connection is set between the browser and the server using three-way handshaking.
+An HTTP request is sent to the server using the TCP connection.
+The web servers running on the Servers handle the incoming HTTP request and send the HTTP response.
+The browser processes the HTTP response sent by the server and may close the TCP connection or reuse the same for future requests.
+If the response data is cacheable then browsers cache the same.
+Browser decodes the response and renders the content.
+=============================================================================================
+Hub vs Switch 
+Hub: Hub is a networking device which is used to transmit the signal to each port
+(except one port) to respond from which the signal was received. Hub is operated on a Physical layer.
+In this packet filtering is not available. It is of two types: Active Hub, Passive Hub.
+
+Switch: Switch is a network device which is used to enable the connection
+establishment and connection termination on the basis of need. Switch is operated on the Data link layer. 
+In this packet filtering is available. It is a type of full duplex
+transmission mode and it is also called an efficient bridge.
+
+VPN, advantages and disadvantages of it 
+VPN (Virtual Private Network) : VPN or the Virtual Private Network is a private WAN
+(Wide Area Network) built on the internet. It allows the creation of a secured tunnel
+(protected network) between different networks using the internet (public network).
+By using the VPN, a client can connect to the organisation’s network remotely.
+
+Advantages of VPN :
+1. VPN is used to connect offices in different geographical locations remotely and is
+cheaper when compared to WAN connections.
+2. VPN is used for secure transactions and confidential data transfer between
+multiple offices located in different geographical locations.
+3. VPN keeps an organisation’s information secured against any potential threats or
+intrusions by using virtualization.
+4. VPN encrypts the internet traffic and disguises the online identity
+
+Disadvantages of VPN :
+1. Not designed for continuous use
+2. Complexity prevents scalability
+3. Lack of granular security
+4. Unpredictable performance
+5. Unreliable availability
+
+LAN
+A local area network (LAN) is a collection of devices connected together in one physical location, 
+such as a building, office, or home. A LAN can be small or large, ranging from a home network 
+with one user to an enterprise network with thousands of users and devices in an office or school.
