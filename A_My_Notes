@@ -18,7 +18,8 @@ Types of Os:
             Jobs---->Os----->batch----->cpu
 
             Advantages:
-                  It is very difficult to guess or know the time required for any job to complete, but processors of the batch systems know how long the job would be when it is in the queue.  
+                  It is very difficult to guess or know the time required for any job to complete, but processors of the 
+                  batch systems know how long the job would be when it is in the queue.  
                   It is easy to manage large work repeatedly in batch systems.
             Dis:
                   Batch systems are hard to debug.
@@ -33,10 +34,12 @@ Types of Os:
 
             It connects multiple computers via a single communication channel.
             (daily life example: people in villagers meet at a large tree).
-            Individual systems that communicate via a single channel are regarded as a single entity and They're also known as loosely coupled systems.
+            Individual systems that communicate via a single channel are regarded as a single entity and They're also known as
+            loosely coupled systems.
       
       Multitasking OS:
-            Multitasking Operating System is simply a multiprogramming Operating System with having facility of a Round-Robin Scheduling Algorithm.
+            Multitasking Operating System is simply a multiprogramming Operating System with having facility of a 
+            Round-Robin Scheduling Algorithm.
             It can run multiple programs simultaneously.
             It comes with proper memory management.
 
@@ -99,12 +102,16 @@ Socket:
 
       On the client-side:
         The client knows the hostname of the machine on which the server is running and the port number on which the server is listening. 
-        To make a connection request, the client tries to rendezvous with the server on the server's machine and port. The client also needs to identify itself to the server so it binds to a local port number that it will use during this connection. This is usually assigned by the system.
+        To make a connection request, the client tries to rendezvous with the server on the server's machine and port. The client also
+        needs to identify itself to the server so it binds to a local port number that it will use during this connection. 
+        This is usually assigned by the system.
 
       On the server-side:
           If everything goes well, the server accepts the connection.
-          Upon acceptance, the server gets a new socket bound to the same local port and also has its remote endpoint set to the address and port of the client.
-          It needs a new socket so that it can continue to listen to the original socket for connection requests while tending to the needs of the connected client.
+          Upon acceptance, the server gets a new socket bound to the same local port and also has its remote endpoint set to the 
+          address and port of the client.
+          It needs a new socket so that it can continue to listen to the original socket for connection requests while
+          tending to the needs of the connected client.
 
       result:
             On the client side, if the connection is accepted, a socket is successfully 
@@ -112,7 +119,8 @@ Socket:
 
 
 Monolithic Kernel (provides good performance but lots of lines of code):
-      It is one of the types of kernel where all operating system services operate in kernel space. It has dependencies between system components. It has huge lines of code which is complex.
+      It is one of the types of kernel where all operating system services operate in kernel space.
+      It has dependencies between system components. It has huge lines of code which is complex.
       Example : Unix, Linux, Open VMS, XTS-400 etc.
 ===================================================================================
 Difference between process and program and thread? Different types of process. 
@@ -257,7 +265,8 @@ What is fragmentation? Types of fragmentation.
 
     Example: Imagine a memory system where blocks of memory are allocated and deallocated over time. 
     As blocks are freed up, the memory may become fragmented with small pockets of free space scattered around. 
-    Even though the total free space might be enough for a new allocation, finding a contiguous block of that size might be difficult due to external fragmentation.
+    Even though the total free space might be enough for a new allocation, finding a contiguous block of that size might 
+    be difficult due to external fragmentation.
 
     Example:
       Imagine a library where books of different sizes are placed on shelves in a somewhat random
@@ -352,7 +361,8 @@ Semaphore: Semaphores are more versatile but can be complex to use, especially i
 Mutex: Mutexes are simpler and easier to use in situations where mutual exclusion is the primary concern.
 
 Counting:
-Semaphore: Semaphores can be initialized with a count greater than one, allowing multiple threads to access the critical section simultaneously (useful for scenarios like producer-consumer problems).
+Semaphore: Semaphores can be initialized with a count greater than one, allowing multiple threads to access the critical section 
+simultaneously (useful for scenarios like producer-consumer problems).
 Mutex: Mutexes are generally binary (locked or unlocked), allowing only one thread to access the critical section at a time.
       
 ======================================================================
@@ -361,7 +371,9 @@ Page replacement:(Efficient page replacement algorithms can significantly impact
       in memory)and maximizing the effective use of physical memory.)
 
       Page replacement in operating systems is the mechanism of swapping out pages from memory to disk to accommodate new pages or processes
-      In operating systems, page replacement refers to the mechanism where the operating system selects a page in memory (RAM) to be evicted or swapped out to secondary storage (such as disk) to make room for a new page that needs to be loaded into memory. This is necessary when the system's physical memory (RAM) is full and a new page needs to be brought in from secondary storage.
+      In operating systems, page replacement refers to the mechanism where the operating system selects a page in memory (RAM) 
+      to be evicted or swapped out to secondary storage (such as disk) to make room for a new page that needs to be loaded into memory.
+      This is necessary when the system's physical memory (RAM) is full and a new page needs to be brought in from secondary storage.
 
 Key points:
 
@@ -426,7 +438,7 @@ for an extended period, ensuring fair access to system resources over time.
 This approach helps maintain system efficiency and responsiveness 
 by dynamically adjusting process priorities based on their waiting times.
 ===============================================================================
-Why thradhing occurs???
+Why thrashing occurs???
 Thrashing occurs in operating systems when the system is overwhelmed by excessive paging activity,
 leading to a constant state of high paging and low CPU utilization. This typically happens because
 the system is spending more time swapping pages in and out of memory than executing actual instruct
@@ -488,12 +500,16 @@ Each section can be of a different length. If you want to read a specific chapte
 table of contents (segment table) to find the starting page (base address) and then read from
 there.This logical division makes it easy to manage and access different parts of the book efficiently.
 ====================================================
-Demand paging is a method of virtual memory management which is based on the principle that pages should only be brought into memory if the executing process demands them. This is often referred to as lazy evaluation as only those pages demanded by the process are swapped from secondary storage to main memory.
+Demand paging is a method of virtual memory management which is based on the principle that pages should only be brought
+into memory if the executing process demands them. This is often referred to as lazy evaluation as only those pages demanded by
+the process are swapped from secondary storage to main memory.
 So demand paging works opposite to the principle of loading all pages immediately.
 
-Segmentation is a memory management technique in which the memory is divided into the variable size parts. Each part is known as a segment which can be allocated to a process.
+Segmentation is a memory management technique in which the memory is divided into the variable size parts. 
+Each part is known as a segment which can be allocated to a process.
 
-The details about each segment are stored in a table called a segment table. Segment table is stored in one (or many) of the segments.
+The details about each segment are stored in a table called a segment table. 
+Segment table is stored in one (or many) of the segments.
 
 Segment table contains mainly two information about segment:
 Base: It is the base address of the segment
@@ -860,12 +876,14 @@ Semaphore: Manages the number of empty and full slots in the buffer to control a
 ================================
 Banker’s Algorithm  in Os:
 Brief Explanation:
-The Banker's Algorithm is a resource allocation and deadlock avoidance algorithm used in operating systems to ensure that processes can be safely executed by managing the allocation of multiple types of resources.
+The Banker's Algorithm is a resource allocation and deadlock avoidance algorithm used in operating systems
+to ensure that processes can be safely executed by managing the allocation of multiple types of resources.
 
 Detailed Explanation:
 Purpose:
 
-Banker's Algorithm is designed to prevent deadlock and ensure that the system can allocate resources to processes in a way that avoids unsafe states.
+Banker's Algorithm is designed to prevent deadlock and ensure that the system can allocate resources to processes in 
+a way that avoids unsafe states.
 Concept:
 
 It operates by considering the current state of the system (available resources and resource
@@ -893,7 +911,9 @@ Banker's Algorithm ensures the safe allocation of resources by maintaining
 a state where deadlock can be avoided, thus allowing processes to execute efficiently 
 without running into resource allocation conflicts or deadlock situations.
 
-Banker's Algorithm, while primarily used in operating systems for resource allocation and deadlock avoidance, can be analogously understood in everyday scenarios involving resource management and planning. Here's a simplified daily life example:
+Banker's Algorithm, while primarily used in operating systems for resource allocation and deadlock avoidance, 
+can be analogously understood in everyday scenarios involving resource management and planning. Here's a simplified daily 
+life example:
 
 Daily Life Example of Banker's Algorithm:
 Imagine a family managing their household chores and resources:
