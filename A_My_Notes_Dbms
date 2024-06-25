@@ -247,7 +247,8 @@ Example Scenario: Two customers are transferring money simultaneously. Customer
 and Customer 2 transfers $200 from Account C to Account D.
 
 Isolation Example:
-Without isolation, Customer 2 might see an intermediate state where only one part of Customer 1's transaction has been completed. Isolation ensures that each transaction is unaware of other transactions' intermediate states.
+Without isolation, Customer 2 might see an intermediate state where only one part of Customer 1's transaction has been completed.
+Isolation ensures that each transaction is unaware of other transactions' intermediate states.
 
 -- Transaction 1
 BEGIN TRANSACTION;
@@ -556,13 +557,13 @@ Tables: Person and Passport
 
 Person Table:
 PersonID	Name	Age
-1	Alice	30
-2	Bob	25
+1	        Alice	30
+2	         Bob	25
 
 Passport Table:
 PassportID	PersonID	PassportNumber
-101	1	A123456
-102	2	B789012
+101	        1	        A123456
+102	        2	        B789012
 Explanation:
 
 Each person has one unique passport, and each passport is assigned to one person. 
@@ -583,14 +584,14 @@ Tables: Department and Employee
 
 Department Table:
 DepartmentID	DepartmentName
-1	HR
-2	IT
+1	                HR
+2	                IT
 
 Employee Table:
 EmployeeID	Name	DepartmentID
-101	Alice	1
-102	Bob	1
-103	Charlie	2
+101	        Alice	    1
+102	        Bob	        1
+103	        Charlie	    2
 Explanation:
 
 Each department can have multiple employees, but each employee belongs to only
@@ -610,19 +611,19 @@ Tables: Student, Course, and Enrollment
 
 Student Table:
 StudentID	Name
-1	Alice
-2	Bob
+1	        Alice
+2	        Bob
 Course Table:
 
 CourseID	CourseName
-101	Math
-102	Science
+101	        Math
+102	        Science
 Enrollment Table (Junction Table):
 
 StudentID	CourseID
-1	101
-1	102
-2	101
+1	        101
+1	        102
+2	        101
 
 Explanation:
 A student can enroll in multiple courses, and each course can have
@@ -651,7 +652,8 @@ Summary::
 One-to-One (1:1) Relationship: Each row in Table A is linked to one and only one row in Table B.
 
 Use Case: Splitting a table to improve performance, storing sensitive information separately.
-One-to-Many (1-1) Relationship: A row in Table A can be associated with one or more rows in Table B, but a row in Table B is associated with only one row in Table A.
+One-to-Many (1-1) Relationship: A row in Table A can be associated with one or more rows in Table B, but a row in Table B
+is associated with only one row in Table A.
 
 Use Case: Organizing data where one entity owns multiple instances of another entity.
 
@@ -862,9 +864,9 @@ Normalized to 1NF:
 OrderID	CustomerName	ProductID	Quantity
 1	Alice	P1	2
 1	Alice	P2	3
-2	Bob	P3	1
-2	Bob	P4	1
-2	Bob	P5	2
+2	Bob	    P3	1
+2	Bob	    P4	1
+2	Bob	    P5	2
 2. Second Normal Form (2NF)
 Definition: A table is in the second normal form if:
 
@@ -875,22 +877,23 @@ Example:
 1NF Table:
 
 OrderID	ProductID	Quantity	CustomerName	CustomerAddress
-1	P1	2	Alice	123 Maple St.
-1	P2	3	Alice	123 Maple St.
-2	P3	1	Bob	456 Oak St.
+1	P1	    2	    Alice	        123             Maple St.
+1	P2	    3	    Alice	        123             Maple St.
+2	P3	    1	    Bob	            456             Oak St.
 Normalized to 2NF:
 
 Orders Table:
 
 OrderID	CustomerName	CustomerAddress
-1	Alice	123 Maple St.
-2	Bob	456 Oak St.
+1	        Alice	    123 Maple St.
+2	        Bob	        456 Oak St.
 OrderDetails Table:
 
 OrderID	ProductID	Quantity
 1	P1	2
 1	P2	3
 2	P3	1
+
 3. Third Normal Form (3NF)
 Definition: A table is in the third normal form if:
 
