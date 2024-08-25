@@ -389,7 +389,9 @@ software systems.
 Polymorphism:
 
 Polymorphism in C++:
-Polymorphism is a key concept in object-oriented programming (OOP) that allows objects to be treated as instances of their parent class rather than their actual class. This enables one interface to be used for a general class of actions, with specific behavior determined at runtime based on the actual derived class of the object.
+Polymorphism is a key concept in object-oriented programming (OOP) that allows objects to be treated as instances of their
+parent class rather than their actual class. This enables one interface to be used for a general class of actions, with specific
+behavior determined at runtime based on the actual derived class of the object.
 
 Types of Polymorphism in C++:
 Compile-time Polymorphism (Static Polymorphism):
